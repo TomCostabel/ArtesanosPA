@@ -3,6 +3,8 @@ import "../NavBar/NavBar.css";
 import img from "../../assets/img/artesanosLogoWhite.jpg";
 
 import img1 from "../../assets/img/ig.png";
+import img2 from "../../assets/img/wsp.png";
+import img3 from "../../assets/img/fb.png";
 
 import { Link } from "react-router-dom";
 export default function NavBar() {
@@ -20,11 +22,19 @@ export default function NavBar() {
                     <h2 className="title-navBar-list">Sobre nosotros</h2>
                 </Link>
                 <Link to="/Catalogo">
-                    <h2 className="title-navBar-list">Catalogo</h2>
+                    <h2
+                        href="https://www.ejempl.es"
+                        target="_parent"
+                        className="title-navBar-list"
+                    >
+                        Catalogo
+                    </h2>
                 </Link>
             </div>
             <div className="redes">
                 <img className="img-ig" src={img1} />
+                <img className="img-ig" src={img2} />
+                <img className="img-ig" src={img3} />
             </div>
         </div>
     );
