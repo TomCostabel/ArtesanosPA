@@ -1,0 +1,26 @@
+.container-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #fff1eb;
+    height: 100px;
+    -webkit-box-shadow: -4px 2px 18px 0px #f0d9cf;
+    -moz-box-shadow: -4px 2px 18px 0px #f0d9cf;
+    box-shadow: -4px 2px 18px 0px #f0d9cf;
+}
+.list-navbar {
+    display: flex;
+    gap: 20px;
+}
+.logo-navBar {
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    margin-top: 5px;
+}
+.logo-title-navBar {
+    display: flex;
+}
+.title-navBar {
+    font-family: "Dancing Script", cursive;
+}
