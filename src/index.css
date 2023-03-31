@@ -6,12 +6,12 @@ body {
 }
 
 a {
-    font-weight: 500;
-    color: #ffffff;
+    /* font-weight: 500; */
+    /* color: #ffffff; */
     text-decoration: inherit;
 }
 a:hover {
-    color: #ffffff;
+    color: #000000;
 }
 
 h1 {
