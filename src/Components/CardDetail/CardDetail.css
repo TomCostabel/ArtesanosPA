@@ -1,0 +1,69 @@
+.container-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: red;
+    height: 90vh;
+    user-select: none;
+}
+.container-centrado-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-color: #fff1eb; */
+
+    border-radius: 10px;
+    width: 1200px;
+    height: 700px;
+}
+.titulo-propiedades-detail {
+    width: 600px;
+    margin-left: 20px;
+    /* background-color: white; */
+    /* background-color: #fff1eb; */
+    border: 1px solid #df9a7c88;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.price-button-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+}
+.price-detail {
+    font-size: 30px;
+    font-weight: 300;
+    /* font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+        "Lucida Sans Unicode", Geneva, Verdana, sans-serif; */
+}
+.img-detail {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+.propiedades-detail {
+    width: 500px;
+    font-weight: 400;
+}
+.button-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 4px;
+    background-color: black;
+    border: 1px solid black;
+    color: white;
+    height: 40px;
+    width: 180px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+.button-detail:hover {
+    background-color: white;
+    color: black;
+}
