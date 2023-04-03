@@ -14,7 +14,7 @@
     justify-content: center;
     margin-top: -200px;
     background-color: #fff1eb;
-    border-radius: 50px;
+    border-radius: 10px;
     height: 400px;
     width: 2100px;
     gap: 40px;
@@ -26,7 +26,7 @@
     align-items: center;
     justify-content: center;
     background-color: #ffffff;
-    border-radius: 50px;
+    border-radius: 10px;
     width: 250px;
     height: 300px;
     border: 3px solid #cc70492c;
@@ -42,7 +42,7 @@
 }
 .img-catalogo {
     width: 180px;
-    border-radius: 50px;
+    border-radius: 10px;
 }
 .img-catalogo:hover {
     opacity: 100%;
@@ -104,7 +104,7 @@
         margin-top: 70px;
     }
     .card-individual-catalogo {
-        width: 100px;
+        width: 110px;
         height: 150px;
         font-size: 8px;
         border-radius: 10px;

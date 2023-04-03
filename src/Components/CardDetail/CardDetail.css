@@ -21,7 +21,7 @@
     margin-left: 20px;
     /* background-color: white; */
     /* background-color: #fff1eb; */
-    border: 1px solid #df9a7c88;
+    /* border: 1px solid #df9a7c88; */
     border-radius: 10px;
     display: flex;
     flex-direction: column;
@@ -66,4 +66,78 @@
 .button-detail:hover {
     background-color: white;
     color: black;
+}
+.titulo-mobile {
+    display: none;
+}
+
+@media (max-width: 1200px) {
+    .img-detail {
+        width: 300px;
+        height: 300px;
+    }
+    .container-centrado-detail {
+        width: 750px;
+    }
+}
+@media (max-width: 700px) {
+    .img-detail {
+        width: 250px;
+        height: 250px;
+    }
+    .container-centrado-detail {
+        width: 450px;
+    }
+    .titulo-propiedades-detail {
+        width: 300px;
+        height: 500px;
+    }
+    .propiedades-detail {
+        width: 190px;
+    }
+    .titulo-detail {
+        font-size: 30px;
+    }
+    .button-detail {
+        width: 150px;
+        margin-left: -20px;
+    }
+    .price-detail {
+        font-size: 20px;
+    }
+}
+@media (max-width: 420px) {
+    .img-detail {
+        width: 300px;
+        height: 200px;
+        border-radius: 1px;
+        margin-left: 20px;
+    }
+    .container-centrado-detail {
+        flex-direction: column;
+        gap: 20px;
+        width: 320px;
+        height: 1000px;
+
+        /* background-color: red; */
+        margin-left: -20px;
+    }
+
+    .titulo-propiedades-detail {
+        border-radius: 1px;
+        border: 1px solid white;
+    }
+    .propiedades-detail {
+    }
+    .titulo-detail {
+    }
+    .button-detail {
+    }
+    .price-detail {
+    }
+}
+@media (max-height: 741px) {
+    .img-detail {
+        margin-top: 270px;
+    }
 }

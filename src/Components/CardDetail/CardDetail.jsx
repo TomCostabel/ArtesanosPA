@@ -13,7 +13,9 @@ export default function CardDetail() {
                 <div className="container-centrado-detail">
                     <img className="img-detail" src={Productos[id - 1].image} />
                     <div className="titulo-propiedades-detail">
-                        <h1>{Productos[id - 1].titulo}</h1>
+                        <h1 className="titulo-detail">
+                            {Productos[id - 1].titulo}
+                        </h1>
                         <h4 className="propiedades-detail">
                             {Productos[id - 1].descripcion}
                         </h4>
