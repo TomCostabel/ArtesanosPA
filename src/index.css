@@ -13,6 +13,18 @@ a {
 a:hover {
     color: #000000;
 }
+a:link {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+
+a:visited {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+}
+a:visited:hover {
+    color: rgb(0, 0, 0);
+}
 
 h1 {
     font-size: 3.2em;

@@ -4,11 +4,13 @@ import Loading from "../Loading/Loading";
 import "../Catalogo/Catalogo.css";
 import img from "../../assets/img/artesanosLogo.jpg";
 import { Link } from "react-router-dom";
+import Productos from "../../productos.json";
 
 export default function Catalogo() {
     const [loading, setLoading] = useState(true);
     setTimeout(() => {
         setLoading(false);
+        console.log(Productos);
     }, 1200);
     return (
         <>

@@ -10,8 +10,9 @@
     user-select: none;
 }
 .title-navBar {
-    margin-top: 25px;
+    margin-top: 21px;
     color: #e78d67de;
+    font-size: 20px;
 }
 .list-navbar {
     display: flex;
@@ -19,13 +20,13 @@
     justify-content: center;
     margin-top: 5px;
     gap: 20px;
-    font-size: 15px;
+    font-size: 12px;
     width: 400px;
 }
 .logo-navBar {
     border-radius: 50%;
-    width: 60px;
-    height: 60px;
+    width: 50px;
+    height: 50px;
     -webkit-box-shadow: -4px 2px 18px 0px #080808;
     -moz-box-shadow: -4px 2px 18px 0px #000000;
     box-shadow: -4px 2px 18px 0px #00000038;
@@ -41,7 +42,7 @@
     font-weight: 300;
 }
 .img-ig {
-    width: 30px;
+    width: 20px;
 }
 .redes {
     display: flex;
