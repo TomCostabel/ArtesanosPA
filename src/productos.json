@@ -1,226 +1,238 @@
 [
     {
         "titulo": "Amatista",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "La amatista es una piedra extraordinariamente poderosa y protectora, con una elevada vibracion espiritual. Protege al ataque psiquico tramitando la energia en amor. Su serenidad potencia los estados de conciencia y meditacion. Tiene grandes poderes curativos y limpiadores",
         "price": 900,
-        "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
+        "image": "https://scontent.faep9-3.fna.fbcdn.net/v/t39.30808-6/339128131_599085448550595_3116801518178232628_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHLrm9mhFGZUKDVjIYQleQckWDYmghUyG-RYNiaCFTIb4XOCtewp_raHM96q-zW_FovV44KowFFVOZhVSmXvLWy&_nc_ohc=Zhs7r5NacMYAX9qq1lC&_nc_ht=scontent.faep9-3.fna&oh=00_AfC7r3_e1gOfx997eSNQncii0WRlv8mMnBKC3L3yrpRWfg&oe=6434BC1F",
         "categoria": "DIJES EN BRUTO CON ALPACA",
-        "id": 1
+        "id": 1,
+        "stock": 100
+    },
+    {
+        "titulo": "Pirita",
+        "descripcion": "Fuerte mineral de abundancia. Alivianando las frustraciones y nervios, amplifica la creatividad.",
+        "price": 900,
+        "image": "https://scontent.faep9-1.fna.fbcdn.net/v/t39.30808-6/339740614_178440334604313_1552389800243129013_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeEj9zeLF4Le6ZwOhxQlbyY9eapAOgAkkqB5qkA6ACSSoJpfFnGkXlB54vGtXEzlhjxPUrtblmBTFekfmOdw0mCg&_nc_ohc=Rnsx3MctHZ4AX-VfH7j&_nc_ht=scontent.faep9-1.fna&oh=00_AfDMIUev2XoWPrgfLhyiXZ5XN67z1gqbVN3bmIzkRw5NXw&oe=64351F3F",
+        "categoria": "DIJES EN BRUTO CON ALPACA",
+        "id": 2,
+        "stock": 100
     },
     {
         "titulo": "Cuarzo rosa",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "Es la piedra del amor y la paz interior. Purifica el corazon, ideal para el amor propio. Facilita el perdon y fortalece el autoestima.",
         "price": 900,
-        "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
+        "image": "https://scontent.faep9-3.fna.fbcdn.net/v/t39.30808-6/339639858_3741532156066772_913868628769800095_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGW_XG5oCwDZAKnnbaHOGcfse5Q3O_Eilux7lDc78SKW9Q14kp-cLrLbz8MHq3JkmrcaV5J_Ko-8vIi9nsbHJ0N&_nc_ohc=qo_YMbzhwXkAX8Lhoas&_nc_ht=scontent.faep9-3.fna&oh=00_AfAokQfmeHJQKxG-8A4Jx-lva6anK5VhFDV1xnYroXGCmA&oe=64354662",
         "categoria": "DIJES EN BRUTO CON ALPACA",
-        "id": 2
+        "id": 3,
+        "stock": 100
     },
-    {
-        "titulo": "Citrino",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
-        "price": 900,
-        "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
-        "categoria": "DIJES EN BRUTO CON ALPACA",
-        "id": 3
-    },
+
     {
         "titulo": "Cianita negra",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "Tambien conocida como la escoba de bruja por barrer toda la energia negativa y los desechos, tiene la capacidad de no almacenar estados de baja vibracion. Esta piedra anima a decir la verdad, superando miedos y bloqueaos.",
         "price": 900,
         "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
         "categoria": "DIJES EN BRUTO CON ALPACA",
-        "id": 4
+        "id": 5,
+        "stock": 100
     },
     {
         "titulo": "Cianita azul",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "La Cianita azul es excelente para meditar. Es tranquilizante, una poderosa transmisora y amplificadora de energia de alta frecuencia. Estimula los dones psiquicos y la intuicion ",
         "price": 900,
         "image": "https://scontent.faep9-1.fna.fbcdn.net/v/t39.30808-6/339750516_781997846863513_7767537893168705106_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=730e14&_nc_ohc=jOK1W40Nx4MAX9z9X08&_nc_ht=scontent.faep9-1.fna&oh=00_AfDvM4sC2S5RU_zNIu5unK8VI2Vs-Tc2be1ocl7TkY-GZQ&oe=64304DDB",
         "categoria": "DIJES EN BRUTO CON ALPACA",
-        "id": 5
+        "id": 6,
+        "stock": 100
     },
     {
         "titulo": "Selenita",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "Tiene una vibracion muy fina y aporta claridad mental, abriendo los chakras coronarios, dando acceso a la conciencia angelical y a la guia superior. La Selenita puta vincula con el cuerpo de luz y ayuda a anclarlo en la vibracion terrenal",
         "price": 900,
         "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
         "categoria": "DIJES EN BRUTO CON ALPACA",
-        "id": 6
+        "id": 7,
+        "stock": 100
     },
     {
         "titulo": "Fluorita",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "La fluorita se considera una piedra espiritual de limpieza, purificación y equilibrio. Tiene una energía muy sutil y eleva la vibración a través de la relajación de la mente. Equilibra los hemisferios y potencia la intuición. Es una piedra que favorece la organización y el orden interno.",
         "price": 900,
         "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
         "categoria": "DIJES EN BRUTO CON ALPACA",
-        "id": 7
+        "id": 8,
+        "stock": 100
     },
     {
         "titulo": "Cuarzo cristal",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
-        "price": 900,
-        "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
-        "categoria": "DIJES EN BRUTO CON ALPACA",
-        "id": 8
+        "descripcion": "Es el sanador y amplificador de energia mas poderoso del planeta. El Cuarzo absorbe, almacena, libera y regula la energia. Este cristal funciona a un nivel vibratorio sintonizado con los requisitos energeticos especificos de la persona que necesita sanacion o que emprende un trabajo espiritual.",
+        "price": 800,
+        "image": "https://scontent.faep9-1.fna.fbcdn.net/v/t39.30808-6/339746820_884255096002466_6211876520409188140_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeEV4ru3D_WZ8DGLeQTCPpJOY8_7zX7XbsJjz_vNftduwjijx__AGgZd4a5h3djXqs65tyVgrDGm37AqALo5W1PM&_nc_ohc=n6eZXyOjoYQAX_4F50g&_nc_ht=scontent.faep9-1.fna&oh=00_AfA6L3f_zZJ0WaKg2hbjBrBkhrEFrGd7BersgIQmn1xEPg&oe=6435303A",
+        "categoria": "DIJES EN BRUTO",
+        "id": 9,
+        "stock": 100
     },
     {
         "titulo": "Howlita",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "La howlita se asocia con la relajación y la tranquilidad, por lo que se utiliza a menudo para ayudar a reducir la ansiedad, el estrés y la ira. Se cree que la howlita puede estimular la creatividad y la imaginación, lo que la hace popular entre los artistas y escritores.",
         "price": 900,
         "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
         "categoria": "DIJES EN BRUTO CON ALPACA",
-        "id": 9
+        "id": 10,
+        "stock": 100
     },
     {
-        "titulo": "Amatista",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "titulo": "Drusa Amatista",
+        "descripcion": "La amatista es una piedra extraordinariamente poderosa y protectora, con una elevada vibracion espiritual. Protege al ataque psiquico tramitando la energia en amor. Su serenidad potencia los estados de conciencia y meditacion. Tiene grandes poderes curativos y limpiadores",
         "price": 800,
-        "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
+        "image": "https://scontent.faep9-1.fna.fbcdn.net/v/t39.30808-6/339145743_3556963871239117_4927968265425766542_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeH0xLs9SkKl2GOUxPQR7POkcl1zSQm47ItyXXNJCbjsiz3XT8BwYEPiyCRczekZYC454iW6_GVEoVoigluZpVNh&_nc_ohc=qqcKxoXBPZAAX_ttAqj&_nc_ht=scontent.faep9-1.fna&oh=00_AfD5Ru3pUoZfY7CCTk57zvSp4Fhb4rcJa3hZm4i7RWdt2A&oe=6435C0B2",
         "categoria": "DIJES EN BRUTO",
-        "id": 10
+        "id": 11,
+        "stock": 100
     },
-    {
-        "titulo": "Cuarzo Cristal",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
-        "price": 800,
-        "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
-        "categoria": "DIJES EN BRUTO",
-        "id": 11
-    },
+
     {
         "titulo": "Cuarzo rosa",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "Es la piedra del amor y la paz interior. Purifica el corazon, ideal para el amor propio. Facilita el perdon y fortalece el autoestima.",
         "price": 800,
-        "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
+        "image": "https://scontent.faep9-1.fna.fbcdn.net/v/t39.30808-6/339416919_933309527801789_6298151598900918882_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFiVdy4iiS5Pnn3nKZ5wC7XC5fVma1AC2oLl9WZrUALag6RHrb3k2eXXiA2UnMijZzftkC5R_tjf8C63_Y1V56Z&_nc_ohc=s3jHlynCgGkAX-XfzJr&_nc_ht=scontent.faep9-1.fna&oh=00_AfC8DQhFvkotjwuLhx8OIOZzgTGTar6j7lLjPxAvb4Z6OQ&oe=64361B53",
         "categoria": "DIJES EN BRUTO",
-        "id": 12
+        "id": 13,
+        "stock": 100
     },
     {
-        "titulo": "Turmalina",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "titulo": "Turmalina Negra",
+        "descripcion": "La Turmalina negra combate bajas frecuencias, purificando la energia en ambientes densos. Limpiando los pensamientos negativos fomenta una actitud relajada y la neutralidad objetiva, con procesos de pensamientos claros y racionales ",
         "price": 800,
-        "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
+        "image": "https://scontent.faep9-1.fna.fbcdn.net/v/t39.30808-6/339740575_750404850001928_1130781840278434214_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFvavfnfWEkinTZP6izFWrJEYw4exztOigRjDh7HO06KKzjwyaaUXwQETa241h7YasVC9KVnqtRZrttq94vWPCH&_nc_ohc=dqAdhRZ6HU4AX_zu5q1&_nc_ht=scontent.faep9-1.fna&oh=00_AfDJ0uE-yGxif-aeU8zE0H3rDNNbV0xahqqCx-U5CHmhDg&oe=6434A4C7",
         "categoria": "DIJES EN BRUTO",
-        "id": 13
+        "id": 14,
+        "stock": 100
     },
     {
         "titulo": "Turmalina rosa",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": " Ofreciendo la seguridad de que amar es seguro, inspira confianza en el amor. Disperza el dolor emocional y los viejos sentimientos destructivos a travez del chakra corazon.",
         "price": 800,
-        "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
+        "image": "https://scontent.faep9-2.fna.fbcdn.net/v/t39.30808-6/339733239_603411488325973_1740880815778386623_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHGLX_GMxKn7evjFQJF-pOmhmUTtlO2hPiGZRO2U7aE-BRTsmiO5_tFqxG92yYrBzmdxMh96IemEJe2pKo2J57d&_nc_ohc=w4KkyFLvwx0AX8u1oM1&_nc_ht=scontent.faep9-2.fna&oh=00_AfC7UZNV9jmRPXDBnEuzQxEJ5WbquA35GIIw6WlyZ-fdPg&oe=64345E7D",
         "categoria": "DIJES EN BRUTO",
-        "id": 14
+        "id": 15,
+        "stock": 100
     },
     {
         "titulo": "Obsidiana negra",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "Ancla el alma y las fuerzas espirituales en el plano fisico. Ayuda a encontrar tu proposito de vida. Saca los aspectos negativos a la superficie para que puedas trabajarlos y transmutarlos.",
         "price": 800,
-        "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
-        "categoria": "DIJES EN BRUTO",
-        "id": 15
+        "image": "https://scontent.faep9-2.fna.fbcdn.net/v/t39.30808-6/339740729_991535355193869_2888735148970766559_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeH56MHWB7NSGLL8bYFAwNUDl56ecqRTgC-Xnp5ypFOAL4bJGcFwl0I1XpIKAil2qrqkdFKVk4znsv9D6NmMXJsx&_nc_ohc=bb2kHB1pyW8AX_yGUpy&_nc_ht=scontent.faep9-2.fna&oh=00_AfDARlEgWB-j5zmYHSPT5QLq9N0ZYV5Yf9zQEsbccsMwOg&oe=64350DC4",
+        "categoria": "DIJES ROLADOS",
+        "id": 16,
+        "stock": 100
     },
     {
         "titulo": "Amatista",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "La amatista es una piedra extraordinariamente poderosa y protectora, con una elevada vibracion espiritual. Protege al ataque psiquico tramitando la energia en amor. Su serenidad potencia los estados de conciencia y meditacion. Tiene grandes poderes curativos y limpiadores",
         "price": 800,
         "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
         "categoria": "DIJES ROLADOS",
-        "id": 16
+        "id": 17,
+        "stock": 100
     },
     {
         "titulo": "Onix cielo",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "Es un cristal que imparte paz y armonia, representa la infinidad del cielo y el mar con sus colores y belleza. Perfecto para despejar la mente. Aliviana las emociones pesasdas y libera el cuerpo de nudos y ataduras.",
         "price": 800,
         "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
         "categoria": "DIJES ROLADOS",
-        "id": 17
+        "id": 18,
+        "stock": 100
     },
     {
         "titulo": "Rodocrosita",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "Representa el amor desinteresado y la compasion. Esta piedra imparte una actitud dinamica y positiva, es excelente para el corazon y las relaciones, especificamente para las personas que no se sienten queridas.",
         "price": 800,
         "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
         "categoria": "DIJES ROLADOS",
-        "id": 18
+        "id": 19,
+        "stock": 100
     },
     {
         "titulo": "Sodalita",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "La sodalita aporta claridad mental y ayuda a la comprensión y liberación de antiguos patrones mentales. Potencia el autoestima y la confianza en uno mismo. Está indicada para tratar la zona de la garganta, para potenciar el sistema inmunológico y también para limpiar la polución electromagnética.",
         "price": 800,
         "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
         "categoria": "DIJES ROLADOS",
-        "id": 19
+        "id": 20,
+        "stock": 100
     },
     {
         "titulo": "Cuarzo verde",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "El cuarzo verde es una piedra suave de armonía y renovación. Se considera una piedra de bienestar y prosperidad. Proporciona equilibrio entre la mente y el cuerpo, aportando estabilidad y calma emocional. Se utiliza preferentemente en el chakra corazón para desbloquearlo y favorecer su regeneración.",
         "price": 800,
         "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
         "categoria": "DIJES ROLADOS",
-        "id": 20
+        "id": 21,
+        "stock": 100
     },
     {
         "titulo": "Citrino",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "Las propiedades que se le atribuyen al citrino son la atracción de la felicidad, la prosperidad y la alegría. También se le asocia con la activación de mayor vitalidad, la estimulación de la creatividad y la mejoría del autoestima.",
         "price": 800,
         "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
         "categoria": "DIJES ROLADOS",
-        "id": 21
+        "id": 22,
+        "stock": 100
     },
     {
         "titulo": "Cuarzo rosa",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "Es la piedra del amor y la paz interior. Purifica el corazon, ideal para el amor propio. Facilita el perdon y fortalece el autoestima.",
         "price": 800,
         "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
         "categoria": "DIJES ROLADOS",
-        "id": 22
+        "id": 23,
+        "stock": 100
     },
     {
         "titulo": "Piedra de luna",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "Es la piedra de los nuevos comienzos. Esta fuertemente conectada a la luna y a la intuicion, es reflexiva y nos recuerda que asi como la luna crece y mengua todo forma parte de un ciclo de cambios. ",
         "price": 2200,
-        "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
+        "image": "https://scontent.faep9-2.fna.fbcdn.net/v/t39.30808-6/339740602_154436107251178_7391651812750315377_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeFcCXVeb4a8C3scdrhgIJq2ty0dUovHx8u3LR1Si8fHyw7crVHdVLV51uSQIufON14rHl29PogUFsxil7OaSNk2&_nc_ohc=buUodrD6fd0AX_tj7q0&_nc_ht=scontent.faep9-2.fna&oh=00_AfCgPWqjiSTQ_7S9psCv6K2JgcaxAPawikbWzNv7FdYXlg&oe=643601E0",
         "categoria": "DIJES IMPORTADOS",
-        "id": 23
+        "id": 24,
+        "stock": 100
     },
     {
         "titulo": "Labradorita",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "Altamente mistica y protectora, portadora de luz. Estimula la intuicion y energiza la imaginacion, eleva la conciencia y conecta con las energias universales.",
         "price": 2200,
-        "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
+        "image": "https://scontent.faep9-1.fna.fbcdn.net/v/t39.30808-6/339657882_1385467498905035_209739486348318773_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGRbAF9jZXSB620_LyItnEaKaQlYfvwyYsppCVh-_DJi1TZITectIqOviEgLtSkm65QsZeEAnZxEHgqhjaLLuW1&_nc_ohc=4xFI1h9La_YAX8C4aJp&_nc_ht=scontent.faep9-1.fna&oh=00_AfDSMP3TpqmY5xQZqnogOeh0u9h6Or7ZJUTJ1vDJReEhsA&oe=6435FD59",
         "categoria": "DIJES IMPORTADOS",
-        "id": 24
+        "id": 25,
+        "stock": 100
     },
     {
         "titulo": "Amatista",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "La amatista es una piedra extraordinariamente poderosa y protectora, con una elevada vibracion espiritual. Protege al ataque psiquico tramitando la energia en amor. Su serenidad potencia los estados de conciencia y meditacion. Tiene grandes poderes curativos y limpiadores",
         "price": 2200,
         "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
         "categoria": "DIJES IMPORTADOS",
-        "id": 25
+        "id": 26,
+        "stock": 100
     },
     {
         "titulo": "Lunas onix cielo",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "Es un cristal que imparte paz y armonia, representa la infinidad del cielo y el mar con sus colores y belleza. Perfecto para despejar la mente. Aliviana las emociones pesasdas y libera el cuerpo de nudos y ataduras.",
         "price": 1350,
-        "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
+        "image": "https://scontent.faep9-2.fna.fbcdn.net/v/t39.30808-6/339563676_3460634830869250_7587312832860552531_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeHqEww0pXlDZOL1lLCC4xZyZMPKqGSjtedkw8qoZKO156aOKIOkJt9Lgld1PBQfZT_r0kYlCv0PtpQEagFDAlL4&_nc_ohc=2Pkxyp0-OooAX99jK_e&_nc_ht=scontent.faep9-2.fna&oh=00_AfCTrQGDfmMEtu6SBqgr3vwL2uMBBkMN-IeHT0OB_aIDGQ&oe=6435C4D3",
         "categoria": "DIJES CON FORMAS",
-        "id": 26
+        "id": 27,
+        "stock": 100
     },
     {
         "titulo": "Corazones rodocrosita",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
+        "descripcion": "Representa el amor desinteresado y la compasion. Esta piedra imparte una actitud dinamica y positiva, es excelente para el corazon y las relaciones, especificamente para las personas que no se sienten queridas.",
         "price": 1350,
-        "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
+        "image": "https://scontent.faep9-3.fna.fbcdn.net/v/t39.30808-6/339745025_1199030240817166_1116479345896650708_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=730e14&_nc_eui2=AeGdr_S0rmoD7rG9VdaMx0pRSlmBJTX79PtKWYElNfv0-2oc2OyFInGfniZlj8_2_qM-ZLWE4z6HnXF6XnuDB1GV&_nc_ohc=zif5f0svDmgAX-hSPzO&_nc_ht=scontent.faep9-3.fna&oh=00_AfBzqkZg_6YcJaB1ItxTKJ_JYeiP7vbPNjC9mqq0WXRkyw&oe=6435B980",
         "categoria": "DIJES CON FORMAS",
-        "id": 27
-    },
-    {
-        "titulo": "Botellitas",
-        "descripcion": "La amatista nos aporta serenidad emocional, sentido común, potencia la motivación y la memoria. A nivel corporal y curativo, esta piedra resulta perfecta a la hora de aliviar ciertos dolores, originados tanto por tensiones físicas, psicológicas y emocionales, ayudando a bloquear el estrés geopático.",
-        "price": 1350,
-        "image": "https://www.nationsonline.org/gallery/Switzerland/Sunrise-on-the-Matterhorn.jpg",
-        "categoria": "DIJES CON FORMAS",
-        "id": 28
+        "id": 28,
+        "stock": 100
     }
 ]

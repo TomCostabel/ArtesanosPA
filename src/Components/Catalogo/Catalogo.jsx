@@ -66,7 +66,7 @@ export default function Catalogo() {
                                     </h3>
                                 </div>
                             </Link>
-                            <Link to="/Catalogo/Saumerios">
+                            {/* <Link to="/Catalogo/Saumerios">
                                 <div className="card-individual-catalogo">
                                     <img className="img-catalogo" src={img} />
                                     <h3 className="titulo-catalogo">
@@ -81,7 +81,7 @@ export default function Catalogo() {
                                         ATRAPA SUEÑOS
                                     </h3>
                                 </div>
-                            </Link>
+                            </Link> */}
                         </div>
                     </div>
                 </div>

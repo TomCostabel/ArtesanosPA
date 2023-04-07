@@ -20,12 +20,19 @@ export default function CardDetail() {
                             {Productos[id - 1].descripcion}
                         </h4>
                         <div className="price-button-detail">
-                            <h1 className="price-detail">
-                                ${Productos[id - 1].price}
-                            </h1>
-                            <h5 className="button-detail">
-                                Agregar al carrito
-                            </h5>
+                            <div>
+                                <h1 className="stock-detail">
+                                    Stock: {Productos[id - 1].stock}
+                                </h1>
+                            </div>
+                            <div className="price-button">
+                                <h1 className="price-detail">
+                                    ${Productos[id - 1].price}
+                                </h1>
+                                <h5 className="button-detail">
+                                    Agregar al carrito
+                                </h5>
+                            </div>
                         </div>
                     </div>
                 </div>
