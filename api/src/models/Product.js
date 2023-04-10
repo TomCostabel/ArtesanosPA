@@ -1,4 +1,4 @@
-import mongoose from "mongoose";
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const ArtesanosProducts = new Schema({
@@ -8,7 +8,7 @@ const ArtesanosProducts = new Schema({
     titulo: {
         type: String,
     },
-    description: {
+    descripcion: {
         type: String,
     },
     price: {
@@ -26,4 +26,4 @@ const ArtesanosProducts = new Schema({
     },
 });
 
-export default mongoose.model("ArtesanosProducts", ArtesanosProducts);
+module.exports = mongoose.model("ArtesanosProducts", ArtesanosProducts);

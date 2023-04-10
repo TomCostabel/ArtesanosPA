@@ -1,4 +1,5 @@
 const app = require("./src/app.js");
+require("./src/database/database.js");
 const port = process.env.PORT || 3001;
 
 async function main() {

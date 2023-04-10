@@ -1,16 +1,17 @@
-import mongoose from "mongoose";
-import * as dotenv from "dotenv";
-dotenv.config();
+const mongoose = require("mongoose");
+const dotenv = require("dotenv");
 
-// const { MONGOUSER, MONGOPASSWORD, MONGOHOST, MONGOPORT } = process.env;
+dotenv.config();
 
 mongoose.set("strictQuery", false);
 mongoose
-    // .connect(url, {})
-    .connect(process.env.MONGO_URL, {})
+    .connect(process.env.MONGO_URL, {
+        useNewUrlParser: true,
+        useUnifiedTopology: true,
+    })
 
     .then(() => {
-        console.log("Base de datos conectada 🔋🔌");
+        console.log("Connected Database 🔋🔌");
     })
     .catch((err) => {
         console.log(err);
