@@ -6,6 +6,7 @@ const {
     postLogin,
     getCart,
     addProductToCart,
+    deleteProductFromCart,
 } = require("../controllers/products.controllers.js");
 
 const router = Router();
@@ -21,5 +22,6 @@ router.post("/login", postLogin);
 
 router.get("/carrito/:email", getCart);
 router.post("/carritoAdd", addProductToCart);
+router.post("/deleteProduct", deleteProductFromCart);
 
 module.exports = router;
