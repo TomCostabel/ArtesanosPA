@@ -5,6 +5,7 @@ const ArtesanosProducts = new Schema({
     id: {
         type: Number,
     },
+
     titulo: {
         type: String,
     },
@@ -21,7 +22,7 @@ const ArtesanosProducts = new Schema({
     categoria: {
         type: String,
     },
-    images: {
+    image: {
         type: String,
     },
 });

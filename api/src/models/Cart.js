@@ -5,10 +5,14 @@ const CartSchema = new mongoose.Schema({
     items: [
         {
             productId: {
-                type: mongoose.Schema.Types.ObjectId,
-                ref: "ArtesanosProducts",
+                type: Number,
+                required: true,
             },
             quantity: { type: Number, default: 1 },
+            titulo: { type: String },
+            descripcion: { type: String },
+            price: { type: Number },
+            images: { type: String },
         },
     ],
 });

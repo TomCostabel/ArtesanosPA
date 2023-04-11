@@ -2,6 +2,8 @@ const ArtesanosProducts = require("../models/Product.js");
 require("../database/database.js");
 const jsonProducts = require("../../../src/productos.json");
 const User = require("../models/User.js");
+const jwt = require("jsonwebtoken");
+const Cart = require("../models/Cart.js");
 const bcrypt = require("bcrypt");
 
 const productsDB = async () => {
@@ -77,9 +79,112 @@ const postUser = async (req, res) => {
         res.status(500).send("Error del servidor");
     }
 };
+const postLogin = async (req, res) => {
+    const { email, password } = req.body;
+
+    try {
+        const user = await User.findOne({ email });
+
+        if (!user) {
+            return res
+                .status(401)
+                .json({ message: "Email o contraseña incorrectos" });
+        }
+
+        const isMatch = await bcrypt.compare(password, user.password);
+
+        if (!isMatch) {
+            return res
+                .status(401)
+                .json({ message: "Email o contraseña incorrectos" });
+        }
+
+        const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
+            //Con expiresIn: 1h estoy haciendo que despues de ese tiempo, el user tenga que solicitar un nuevo TOKEN para seguir navegando
+            expiresIn: "1h",
+        });
+
+        res.json({ token });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ message: "Error al intentar iniciar sesión" });
+    }
+};
+
+// Obtener el carrito de un usuario
+const getCart = async (req, res) => {
+    try {
+        const email = req.params.email.replace("%", "@"); // Reemplazamos el % por @ en el email
+        const cart = await Cart.findOne({ user: email });
+        if (!cart)
+            return res
+                .status(404)
+                .json({ message: "No se encontró el carrito" });
+        res.json(cart);
+    } catch (error) {
+        res.status(500).json({ message: "Error al buscar el carrito" });
+    }
+};
+
+// Agregar un producto al carrito de un usuario
+const addProductToCart = async (req, res) => {
+    // Extraer los datos del producto del cuerpo de la petición
+    const { email, productId, quantity } = req.body;
+
+    try {
+        // Busca el producto por su id normal
+        const product = await ArtesanosProducts.findOne({ id: productId });
+
+        // Si no existe, devuelve un error
+        if (!product) {
+            return res.status(404).json({ message: "Producto no encontrado" });
+        }
+
+        // Busca el carrito del usuario por su email
+        let cart = await Cart.findOne({ user: email });
+
+        // Si no existe, lo crea
+        if (!cart) {
+            cart = await Cart.create({ user: email, items: [] });
+        }
+
+        // Busca si el producto ya está en el carrito
+        const cartItem = cart.items.find(
+            (item) => item.productId === product.id
+        );
+
+        // Si ya está, aumenta la cantidad
+        if (cartItem) {
+            cartItem.quantity += quantity;
+        } else {
+            // Si no está, lo agrega al carrito
+            cart.items.push({
+                productId: product.id,
+                quantity: quantity,
+                titulo: product.titulo,
+                price: product.price,
+                images: product.image,
+            });
+        }
+
+        // Guarda los cambios en el carrito
+        await cart.save();
+
+        // Devuelve el carrito actualizado
+        res.status(200).json({ cart });
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            message: "Error al agregar el producto al carrito",
+        });
+    }
+};
 
 module.exports = {
     getProducts,
     putProducts,
     postUser,
+    postLogin,
+    getCart,
+    addProductToCart,
 };
