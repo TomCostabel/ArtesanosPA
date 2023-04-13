@@ -13,22 +13,21 @@ const {
 } = require("../controllers/products.controllers.js");
 
 const router = Router();
+//----------------- Productos ------------------->
 
 router.get("/products", getProducts);
 router.put("/products/:id", putProducts);
 
-//--------------Registro de usuario-------------------->
-
+//----------- Registro de usuario --------------->
 router.post("/register", postUser);
 router.post("/login", postLogin);
 router.post("/logout", logout);
-//--------------Carrito-------------------->
 
+//------------------Carrito---------------------->
 router.get("/carrito/:email", getCart);
 router.post("/carritoAdd", addProductToCart);
 router.post("/deleteProduct", deleteProductFromCart);
 router.post("/sumarUnoCantidad", sumarUnoCantidad);
-
 router.post("/restarUnoCantidad", restarUnoCantidad);
 
 module.exports = router;
