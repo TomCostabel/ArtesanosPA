@@ -8,6 +8,8 @@ const {
     addProductToCart,
     deleteProductFromCart,
     logout,
+    sumarUnoCantidad,
+    restarUnoCantidad,
 } = require("../controllers/products.controllers.js");
 
 const router = Router();
@@ -25,5 +27,8 @@ router.post("/logout", logout);
 router.get("/carrito/:email", getCart);
 router.post("/carritoAdd", addProductToCart);
 router.post("/deleteProduct", deleteProductFromCart);
+router.post("/sumarUnoCantidad", sumarUnoCantidad);
+
+router.post("/restarUnoCantidad", restarUnoCantidad);
 
 module.exports = router;

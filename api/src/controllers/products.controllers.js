@@ -18,7 +18,7 @@ const productsDB = async () => {
     return product;
 };
 
-//--------------------------Exports------------------------------>
+//--------------------------Exports----------------------------->
 const getProducts = async (req, res) => {
     try {
         const datosDB = await productsDB();
@@ -28,7 +28,7 @@ const getProducts = async (req, res) => {
     }
 };
 
-//-------------------Update Price & Stock------------------------>
+//-------------------Update Price & Stock----------------------->
 const putProducts = async (req, res) => {
     // --- DE ESTA FORMA TENGO QUE MANDAR POR BODY PARA HACER EL UPDATE---------->
     //   {
@@ -50,7 +50,7 @@ const putProducts = async (req, res) => {
     }
 };
 
-//-------------------------Register------------------------------>
+//-------------------------Register----------------------------->
 const postUser = async (req, res) => {
     const { name, email, password } = req.body;
 
@@ -85,7 +85,7 @@ const postUser = async (req, res) => {
     }
 };
 
-//--------------------------Login-------------------------------->
+//--------------------------Login------------------------------->
 const postLogin = async (req, res) => {
     const { email, password } = req.body;
 
@@ -127,7 +127,7 @@ const postLogin = async (req, res) => {
     }
 };
 
-//--------------------------Logout-------------------------------->
+//--------------------------Logout------------------------------>
 const logout = async (req, res) => {
     try {
         // Eliminar el token del usuario en el servidor
@@ -148,7 +148,8 @@ const logout = async (req, res) => {
         });
     }
 };
-//--------------Obtener carrito de usuario x email--------------->
+
+//--------------Obtener carrito de usuario x email-------------->
 const getCart = async (req, res) => {
     try {
         const email = req.params.email.replace("%", "@"); // Reemplazamos el % por @ en el email
@@ -163,7 +164,7 @@ const getCart = async (req, res) => {
     }
 };
 
-//--------------Agregar producto al cart de x USER--------------->
+//--------------Agregar producto al cart de x USER-------------->
 const addProductToCart = async (req, res) => {
     //-----------------Este es el formato a pasar por body ----------->
 
@@ -187,6 +188,7 @@ const addProductToCart = async (req, res) => {
 
         // Busca el carrito del usuario por su email
         let cart = await Cart.findOne({ user: email });
+        productId;
 
         // Si no existe, lo crea
         if (!cart) {
@@ -225,10 +227,17 @@ const addProductToCart = async (req, res) => {
     }
 };
 
-//--------------Eliminar producto del cart--------------->
+//------------------Eliminar producto del cart------------------>
 const deleteProductFromCart = async (req, res) => {
     const { productId } = req.body;
     const { email } = req.body;
+
+    // ------por body----->
+    // {
+    //     "email": "locazo@outlook.com",
+    //     "productId":1
+
+    //   }
 
     try {
         // buscar el cart del usuario
@@ -261,6 +270,64 @@ const deleteProductFromCart = async (req, res) => {
     }
 };
 
+//--------------Sumar uno en cantidad al producto--------- ----->
+const sumarUnoCantidad = async (req, res) => {
+    const { email, productId } = req.body;
+
+    try {
+        const cart = await Cart.findOne({ user: email });
+
+        // Busco el producto en el CART
+        const productIndex = cart.items.findIndex(
+            (item) => item.productId === productId
+        );
+
+        if (productIndex >= 0) {
+            cart.items[productIndex].quantity += 1;
+            await cart.save();
+            return res.json({ message: "Cantidad del producto actualizada" });
+        }
+        res.status(404).json({
+            message: "Producto no encontrado en el carrito",
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "Error al intentar agregar un producto",
+        });
+    }
+};
+
+//--------------Restar uno en cantidad al producto--------- ---->
+const restarUnoCantidad = async (req, res) => {
+    const { email, productId } = req.body;
+
+    try {
+        const cart = await Cart.findOne({ user: email });
+
+        // Busco el producto en el CART
+        const productIndex = cart.items.findIndex(
+            (item) => item.productId === productId
+        );
+
+        if (productIndex >= 0) {
+            if (cart.items[productIndex].quantity === 1) {
+                return res.status(500).json({
+                    message: "Cantidad producto en el menor permitido",
+                });
+            }
+            cart.items[productIndex].quantity -= 1;
+            await cart.save();
+            return res.json({ message: "Cantidad del producto actualizada" });
+        }
+        res.status(404).json({
+            message: "Producto no encontrado en el carrito",
+        });
+    } catch (error) {
+        res.status(500).json({
+            message: "Error al intentar agregar un producto",
+        });
+    }
+};
 module.exports = {
     getProducts,
     putProducts,
@@ -270,4 +337,6 @@ module.exports = {
     addProductToCart,
     deleteProductFromCart,
     logout,
+    sumarUnoCantidad,
+    restarUnoCantidad,
 };
