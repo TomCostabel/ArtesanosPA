@@ -7,6 +7,7 @@ const {
     getCart,
     addProductToCart,
     deleteProductFromCart,
+    logout,
 } = require("../controllers/products.controllers.js");
 
 const router = Router();
@@ -18,6 +19,7 @@ router.put("/products/:id", putProducts);
 
 router.post("/register", postUser);
 router.post("/login", postLogin);
+router.post("/logout", logout);
 //--------------Carrito-------------------->
 
 router.get("/carrito/:email", getCart);

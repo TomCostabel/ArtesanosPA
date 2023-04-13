@@ -106,11 +106,20 @@ const postLogin = async (req, res) => {
                 .json({ message: "Email o contraseña incorrectos" });
         }
 
+        if (user.token) {
+            // si ya tiene un token, lo devuelvo en lugar de generar uno nuevo
+            return res.json({ token: user.token });
+        }
+
         const token = jwt.sign({ userId: user._id }, process.env.JWT_SECRET, {
-            //Con expiresIn: 1h estoy haciendo que despues de ese tiempo, el user tenga que solicitar un nuevo TOKEN para seguir navegando
             expiresIn: "1h",
         });
 
+        user.token = token; // establecer el token generado en el modelo de User
+        await user.save(); // guardar el modelo actualizado en la base de datos
+
+        // Guard oel token en el local storage para validar el login en el front
+        res.cookie("token", token, { httpOnly: true });
         res.json({ token });
     } catch (error) {
         console.error(error);
@@ -118,6 +127,27 @@ const postLogin = async (req, res) => {
     }
 };
 
+//--------------------------Logout-------------------------------->
+const logout = async (req, res) => {
+    try {
+        // Eliminar el token del usuario en el servidor
+        const user = await User.findOne({ email: req.body.email });
+
+        if (!user) {
+            return res.status(404).json({ message: "Usuario no encontrado" });
+        }
+        user.token = null;
+        await user.save();
+        res.clearCookie("token");
+
+        res.status(200).json({ message: "Usuario deslogueado correctamente" });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({
+            message: "Error al intentar desloguear al usuario",
+        });
+    }
+};
 //--------------Obtener carrito de usuario x email--------------->
 const getCart = async (req, res) => {
     try {
@@ -206,7 +236,7 @@ const deleteProductFromCart = async (req, res) => {
 
         // buscar el producto en el cart
         const productIndex = cart.items.findIndex(
-            (item) => item.productId.toString() === productId
+            (item) => item.productId === productId
         );
 
         // si el producto no está en el cart, lanzar un error
@@ -239,4 +269,5 @@ module.exports = {
     getCart,
     addProductToCart,
     deleteProductFromCart,
+    logout,
 };
