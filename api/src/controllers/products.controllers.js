@@ -191,6 +191,11 @@ const addProductToCart = async (req, res) => {
         productId;
 
         // Si no existe, lo crea
+        if (quantity > product.stock) {
+            return res.status(500).json({
+                message: "Quantity no puede superar la cantidad en STOCK",
+            });
+        }
         if (!cart) {
             cart = await Cart.create({ user: email, items: [] });
         }
@@ -202,7 +207,13 @@ const addProductToCart = async (req, res) => {
 
         // Si ya está, aumenta la cantidad
         if (cartItem) {
-            cartItem.quantity += quantity;
+            const newQuantity = cartItem.quantity + quantity;
+            if (newQuantity > product.stock) {
+                return res.status(500).json({
+                    message: "La cantidad a agregar supera el stock disponible",
+                });
+            }
+            cartItem.quantity = newQuantity;
         } else {
             // Si no está, lo agrega al carrito
             cart.items.push({
@@ -276,13 +287,18 @@ const sumarUnoCantidad = async (req, res) => {
 
     try {
         const cart = await Cart.findOne({ user: email });
-
+        const product = await ArtesanosProducts.findOne({ id: productId });
         // Busco el producto en el CART
         const productIndex = cart.items.findIndex(
             (item) => item.productId === productId
         );
 
         if (productIndex >= 0) {
+            if (cart.items[productIndex].quantity === product.stock) {
+                return res
+                    .status(500)
+                    .json({ message: "Cantidad maxima en stock" });
+            }
             cart.items[productIndex].quantity += 1;
             await cart.save();
             return res.json({ message: "Cantidad del producto actualizada" });
