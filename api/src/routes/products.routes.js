@@ -13,8 +13,8 @@ const {
 } = require("../controllers/products.controllers.js");
 
 const router = Router();
-//----------------- Productos ------------------->
 
+//----------------- Productos ------------------->
 router.get("/products", getProducts);
 router.put("/products/:id", putProducts);
 
