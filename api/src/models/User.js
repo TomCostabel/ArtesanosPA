@@ -23,7 +23,9 @@ const UserSchema = new mongoose.Schema({
     ciudad: { type: String, default: null },
     codigoPostal: { type: String, default: null },
     direccion: { type: String, default: null },
+    nombreApellido: { type: String, default: null },
     dni: { type: String, default: null },
+    numeroCelular: { type: String, default: null },
 });
 
 module.exports = mongoose.model("User", UserSchema);

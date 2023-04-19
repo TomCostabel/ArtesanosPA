@@ -42,6 +42,7 @@ const putProducts = async (req, res) => {
         const product = await ArtesanosProducts.findOneAndUpdate(
             { ID },
             { stock, price },
+            // new:true indica que devuelve el documento modificado después de aplicar la actualización
             { new: true }
         );
         res.json(product);
@@ -49,7 +50,49 @@ const putProducts = async (req, res) => {
         console.log({ Message: error.message });
     }
 };
+//-------------Agregar datos para realizar ENVIO --------------->
+const agregarInformacionEnvio = async (req, res) => {
+    // FORMATO DEL BODY
+    //     {
+    //         "email":"",
+    //         "provincia":" ",
+    //         "ciudad":"",
+    //         "direccion":" ",
+    //         "codigoPostal":"",
+    //         "dni":"",
+    //         "nombreApellido":" ",
+    //         "numeroCelular":" "
 
+    //     }
+    const {
+        email,
+        provincia,
+        ciudad,
+        direccion,
+        codigoPostal,
+        dni,
+        nombreApellido,
+        numeroCelular,
+    } = req.body;
+    try {
+        const findUser = await User.findOneAndUpdate(
+            { email },
+            {
+                provincia,
+                ciudad,
+                direccion,
+                codigoPostal,
+                dni,
+                nombreApellido,
+                numeroCelular,
+            },
+            { new: true }
+        );
+        res.json(findUser);
+    } catch (error) {
+        console.log({ Message: error.message });
+    }
+};
 //-------------------------Register----------------------------->
 const postUser = async (req, res) => {
     const { name, email, password } = req.body;
@@ -355,4 +398,5 @@ module.exports = {
     logout,
     sumarUnoCantidad,
     restarUnoCantidad,
+    agregarInformacionEnvio,
 };

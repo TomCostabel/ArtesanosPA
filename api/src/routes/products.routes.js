@@ -10,6 +10,7 @@ const {
     logout,
     sumarUnoCantidad,
     restarUnoCantidad,
+    agregarInformacionEnvio,
 } = require("../controllers/products.controllers.js");
 
 const router = Router();
@@ -23,6 +24,7 @@ router.post("/register", postUser);
 router.post("/login", postLogin);
 router.post("/logout", logout);
 
+router.put("/agregarInformacionEnvio", agregarInformacionEnvio);
 //------------------Carrito---------------------->
 router.get("/carrito/:email", getCart);
 router.post("/carritoAdd", addProductToCart);
