@@ -4,13 +4,13 @@ import Loading from "../Loading/Loading";
 import "../Catalogo/Catalogo.css";
 import img from "../../assets/img/artesanosLogo.jpg";
 import { Link } from "react-router-dom";
-import Productos from "../../productos.json";
+// import Productos from "../../productos.json";
 
 export default function Catalogo() {
     const [loading, setLoading] = useState(true);
     setTimeout(() => {
         setLoading(false);
-        console.log(Productos);
+        // console.log(Productos);
     }, 1200);
     return (
         <>
@@ -66,22 +66,6 @@ export default function Catalogo() {
                                     </h3>
                                 </div>
                             </Link>
-                            {/* <Link to="/Catalogo/Saumerios">
-                                <div className="card-individual-catalogo">
-                                    <img className="img-catalogo" src={img} />
-                                    <h3 className="titulo-catalogo">
-                                        SAUMERIOS
-                                    </h3>
-                                </div>
-                            </Link>
-                            <Link to="/Catalogo/AtrapaSueños">
-                                <div className="card-individual-catalogo">
-                                    <img className="img-catalogo" src={img} />
-                                    <h3 className="titulo-catalogo">
-                                        ATRAPA SUEÑOS
-                                    </h3>
-                                </div>
-                            </Link> */}
                         </div>
                     </div>
                 </div>

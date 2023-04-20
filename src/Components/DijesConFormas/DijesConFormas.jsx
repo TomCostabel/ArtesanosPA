@@ -1,12 +1,20 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
 import Productos from "../../productos.json";
-
 import NavBar from "../NavBar/NavBar";
 import Loading from "../Loading/Loading";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../../redux/actions";
 
 export default function DijesConFormas() {
     const [loading, setLoading] = useState(true);
+    const productos = useSelector((state) => state.productos);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getProducts());
+    }, [dispatch]);
+    console.log("aca los productos", productos);
+
     setTimeout(() => {
         setLoading(false);
     }, 1200);

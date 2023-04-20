@@ -8,6 +8,9 @@ import DijesEnBrutoConAlpaca from "./Components/DijesEnBrutoConAlpaca/DijesEnBru
 import DijesRolados from "./Components/DijesRolados/DijesRolados";
 import DijesImportados from "./Components/DijesImportados/DijesImportados";
 import DijesConFormas from "./Components/DijesConFormas/DijesConFormas";
+// import axios from "axios";
+
+// axios.defaults.baseURL = "http://localhost:3001/";
 
 function App() {
     return (

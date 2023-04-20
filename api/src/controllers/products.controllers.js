@@ -5,6 +5,7 @@ const User = require("../models/User.js");
 const jwt = require("jsonwebtoken");
 const Cart = require("../models/Cart.js");
 const bcrypt = require("bcrypt");
+const mercadopago = require("mercadopago");
 
 const productsDB = async () => {
     let info = jsonProducts;
@@ -218,7 +219,7 @@ const addProductToCart = async (req, res) => {
     //   }
 
     // Extraer los datos del producto del cuerpo de la petición
-    const { email, productId, quantity } = req.body;
+    const { email, productId, quantity, user } = req.body;
 
     try {
         // Busca el producto por su id normal
@@ -271,8 +272,54 @@ const addProductToCart = async (req, res) => {
         // Guarda los cambios en el carrito
         await cart.save();
 
-        // Devuelve el carrito actualizado
-        res.status(200).json({ cart });
+        //---------------- MERCADO PAGO ------------------------>
+        const createPreference = async (product, user) => {
+            try {
+                // Configura el access_token
+                mercadopago.configure({
+                    access_token: process.env.ACCESS_TOKEN,
+                });
+
+                // Crea la preferencia de pago con los datos del producto y del usuario
+                const preference = {
+                    binary_mode: true,
+                    items: [
+                        {
+                            title: product.titulo,
+                            description: product.descripcion,
+                            picture_url: product.image,
+                            quantity: 1,
+                            currency_id: "ARS",
+                            unit_price: product.price,
+                        },
+                    ],
+                    payer: {
+                        name: user.name,
+                        email: user.email,
+                    },
+                    back_urls: {
+                        success: "https://success.com",
+                        failure: "https://failure.com",
+                        pending: "https://pending.com",
+                    },
+                    auto_return: "approved",
+                };
+
+                // Crea la preferencia en Mercado Pago y devuelve su id
+                const response = await mercadopago.preferences.create(
+                    preference
+                );
+                return response.body.id;
+            } catch (error) {
+                console.log(error);
+                return null;
+            }
+        };
+        // Crea la preferencia de pago y devuelve su id
+        const preferenceId = await createPreference(cartItem, email);
+
+        // Devuelve el carrito actualizado y el id de la preferencia de pago
+        res.status(200).json({ cart, preferenceId });
     } catch (error) {
         console.log(error);
         res.status(500).json({
