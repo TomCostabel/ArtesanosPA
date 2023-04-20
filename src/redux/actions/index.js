@@ -5,7 +5,6 @@ export function getProducts() {
     return async function (dispatch) {
         try {
             let res = await axios.get("http://localhost:3001/products");
-            console.log("desde actions", res);
             dispatch({
                 type: GET_ALL_PRODUCTS,
                 payload: res.data,
@@ -13,5 +12,12 @@ export function getProducts() {
         } catch (error) {
             console.log(error);
         }
+    };
+}
+
+export function postLogin(data) {
+    return async () => {
+        const login = await axios.post("http://localhost:3001/login", data);
+        return login;
     };
 }

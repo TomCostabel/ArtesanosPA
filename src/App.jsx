@@ -8,6 +8,8 @@ import DijesEnBrutoConAlpaca from "./Components/DijesEnBrutoConAlpaca/DijesEnBru
 import DijesRolados from "./Components/DijesRolados/DijesRolados";
 import DijesImportados from "./Components/DijesImportados/DijesImportados";
 import DijesConFormas from "./Components/DijesConFormas/DijesConFormas";
+import Logear from "./Components/Logear/Logear";
+
 // import axios from "axios";
 
 // axios.defaults.baseURL = "http://localhost:3001/";
@@ -33,7 +35,7 @@ function App() {
                 path="/Catalogo/DijesConFormas"
                 element={<DijesConFormas />}
             />
-            <Route path="/Catalogo" element={<Catalogo />} />
+            <Route path="/Login" element={<Logear />} />
             <Route path="/Catalogo" element={<Catalogo />} />
             <Route path="/Catalogo" element={<Catalogo />} />
         </Routes>

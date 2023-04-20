@@ -1,10 +1,9 @@
 import React from "react";
 import "../NavBar/NavBar.css";
 import img from "../../assets/img/artesanosLogoWhite.jpg";
-
-import img1 from "../../assets/img/ig.png";
-import img2 from "../../assets/img/wsp.png";
-import img3 from "../../assets/img/fb.png";
+// import img1 from "../../assets/img/ig.png";
+// import img2 from "../../assets/img/wsp.png";
+// import img3 from "../../assets/img/fb.png";
 
 import { Link } from "react-router-dom";
 export default function NavBar() {
@@ -31,10 +30,15 @@ export default function NavBar() {
                     </h2>
                 </Link>
             </div>
-            <div className="redes">
+            {/* <div className="redes">
                 <img className="img-ig" src={img1} />
                 <img className="img-ig" src={img2} />
                 <img className="img-ig" src={img3} />
+            </div> */}
+            <div>
+                <Link to="/Login">
+                    <h5>Login</h5>
+                </Link>
             </div>
         </div>
     );

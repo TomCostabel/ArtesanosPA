@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Card from "../Card/Card";
-import Productos from "../../productos.json";
 import NavBar from "../NavBar/NavBar";
 import Loading from "../Loading/Loading";
 import { useDispatch, useSelector } from "react-redux";
@@ -13,12 +12,11 @@ export default function DijesConFormas() {
     useEffect(() => {
         dispatch(getProducts());
     }, [dispatch]);
-    console.log("aca los productos", productos);
 
     setTimeout(() => {
         setLoading(false);
     }, 1200);
-    const filtro = Productos?.filter((e) => e.categoria == "DIJES CON FORMAS");
+    const filtro = productos?.filter((e) => e.categoria == "DIJES CON FORMAS");
     return (
         <>
             {loading ? (

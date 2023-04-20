@@ -1,15 +1,21 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import Loading from "../Loading/Loading";
-import Productos from "../../productos.json";
 import Card from "../Card/Card";
 import "../DijesEnBruto/DijesEnBruto.css";
+import { useDispatch, useSelector } from "react-redux";
+import { getProducts } from "../../redux/actions";
 export default function DijesEnBruto() {
     const [loading, setLoading] = useState(true);
+    const productos = useSelector((state) => state.productos);
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(getProducts());
+    }, [dispatch]);
     setTimeout(() => {
         setLoading(false);
     }, 1200);
-    const filtro = Productos?.filter((e) => e.categoria == "DIJES EN BRUTO");
+    const filtro = productos?.filter((e) => e.categoria == "DIJES EN BRUTO");
     return (
         <>
             {loading ? (
