@@ -20,7 +20,7 @@ export default function Register() {
         password: "",
     });
     const usersArr = users.filter((e) => e.email === data.email);
-    console.log("aca", usersArr);
+    console.log("aca la coincidencia", usersArr);
     const handleChange = (e) => {
         setData({
             ...data,
