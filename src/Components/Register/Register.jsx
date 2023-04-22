@@ -32,9 +32,11 @@ export default function Register() {
         if (usersArr.length === 1) {
             alert("Email ya registrado");
             console.log(data);
+            return;
         }
         if (data.password !== confirmPassword) {
             alert("Las contraseñas no coinciden");
+            return;
         } else {
             dispatch(postRegister(data));
             console.log("registradooooooo");
