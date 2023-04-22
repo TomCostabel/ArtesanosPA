@@ -30,12 +30,12 @@ export default function NavBar() {
                     </h2>
                 </Link>
             </div>
-            {/* <div className="redes">
+            {/* <div >
                 <img className="img-ig" src={img1} />
                 <img className="img-ig" src={img2} />
                 <img className="img-ig" src={img3} />
             </div> */}
-            <div>
+            <div className="login-logout">
                 <Link to="/Login">
                     <h5>Login</h5>
                 </Link>

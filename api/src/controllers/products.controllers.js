@@ -170,6 +170,15 @@ const postLogin = async (req, res) => {
     }
 };
 
+//--------------------------getUsers------------------------------->
+const getUsers = async (req, res) => {
+    try {
+        const users = await User.find();
+        res.status(200).json(users);
+    } catch (error) {
+        console.log({ Message: error.message });
+    }
+};
 //--------------------------Logout------------------------------>
 const logout = async (req, res) => {
     try {
@@ -445,4 +454,5 @@ module.exports = {
     sumarUnoCantidad,
     restarUnoCantidad,
     agregarInformacionEnvio,
+    getUsers,
 };

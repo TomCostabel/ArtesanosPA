@@ -11,6 +11,7 @@ const {
     sumarUnoCantidad,
     restarUnoCantidad,
     agregarInformacionEnvio,
+    getUsers,
 } = require("../controllers/products.controllers.js");
 
 const router = Router();
@@ -20,6 +21,9 @@ router.get("/products", getProducts);
 router.put("/products/:id", putProducts);
 
 //----------- Registro de usuario --------------->
+getUsers;
+router.get("/getUsers", getUsers);
+
 router.post("/register", postUser);
 router.post("/login", postLogin);
 router.post("/logout", logout);

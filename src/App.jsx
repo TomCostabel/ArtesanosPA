@@ -9,6 +9,7 @@ import DijesRolados from "./Components/DijesRolados/DijesRolados";
 import DijesImportados from "./Components/DijesImportados/DijesImportados";
 import DijesConFormas from "./Components/DijesConFormas/DijesConFormas";
 import Logear from "./Components/Logear/Logear";
+import Register from "./Components/Register/Register";
 
 // import axios from "axios";
 
@@ -36,7 +37,7 @@ function App() {
                 element={<DijesConFormas />}
             />
             <Route path="/Login" element={<Logear />} />
-            <Route path="/Catalogo" element={<Catalogo />} />
+            <Route path="/Register" element={<Register />} />
             <Route path="/Catalogo" element={<Catalogo />} />
         </Routes>
     );

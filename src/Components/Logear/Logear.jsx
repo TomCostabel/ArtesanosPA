@@ -3,6 +3,7 @@ import NavBar from "../NavBar/NavBar";
 import "./Logear.css";
 import { useDispatch } from "react-redux";
 import { postLogin } from "../../redux/actions";
+import { Link } from "react-router-dom";
 
 export default function Logear() {
     const dispatch = useDispatch();
@@ -10,10 +11,10 @@ export default function Logear() {
         email: "",
         password: "",
     });
-    useEffect(() => {
-        // dispatch(postLogin());
-        console.log(data);
-    }, [dispatch, data]);
+    // useEffect(() => {
+    // dispatch(postLogin());
+    // console.log(data);
+    // }, [dispatch, data]);
     const handleChange = (e) => {
         setData({
             ...data,
@@ -53,6 +54,12 @@ export default function Logear() {
                     </label>
                     <button type="submit">Login</button>
                 </form>
+                <div>
+                    <h3>No tenes cuenta ?</h3>
+                    <Link to="/Register">
+                        <h6>Registrate</h6>
+                    </Link>
+                </div>
             </div>
         </div>
     );

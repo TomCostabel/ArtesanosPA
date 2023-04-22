@@ -44,7 +44,7 @@
 .img-ig {
     width: 20px;
 }
-.redes {
+.login-logout {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,7 +73,7 @@
     .container-navbar {
         height: 60px;
     }
-    .redes {
+    .login-logout {
         gap: 15px;
         width: 70px;
         margin-top: 3px;

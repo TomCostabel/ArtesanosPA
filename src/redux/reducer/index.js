@@ -1,7 +1,8 @@
-import { GET_ALL_PRODUCTS } from "../actions/index.js";
+import { GET_ALL_PRODUCTS, GET_ALL_USERS } from "../actions/index.js";
 
 const initialState = {
     productos: [],
+    users: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -10,6 +11,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 productos: action.payload,
+            };
+        case GET_ALL_USERS:
+            return {
+                ...state,
+                users: action.payload,
             };
         default:
             return state;
