@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import "./Logear.css";
 import { useDispatch, useSelector } from "react-redux";
-import { postLogin, saveEmailAfterLogin } from "../../redux/actions";
+import { getUsers, postLogin, saveEmailAfterLogin } from "../../redux/actions";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function Logear() {
@@ -15,7 +15,9 @@ export default function Logear() {
         email: "",
         password: "",
     });
-
+    useEffect(() => {
+        dispatch(getUsers());
+    }, [dispatch]);
     const handleChange = (e) => {
         setData({
             ...data,
@@ -28,11 +30,11 @@ export default function Logear() {
         dispatch(postLogin(data));
         // Filtro la coincidencia en el usuario logeado para guardarlo en el estado global.
         const usersArr = users?.filter((e) => e.email == data.email);
-        console.log("Logeadooooooo", usersArr.email);
-        dispatch(saveEmailAfterLogin(usersArr.email));
-        if (saveEmail) {
-            return navigate("/");
-        }
+        console.log("Logeadooooooo", usersArr);
+        dispatch(saveEmailAfterLogin(usersArr));
+        // if (saveEmail) {
+        //     return navigate("/");
+        // }
     };
 
     return (
