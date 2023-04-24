@@ -1,20 +1,21 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import "./Logear.css";
-import { useDispatch } from "react-redux";
-import { postLogin } from "../../redux/actions";
-import { Link } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { postLogin, saveEmailAfterLogin } from "../../redux/actions";
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Logear() {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
+    const users = useSelector((state) => state.users);
+    const saveEmail = useSelector((state) => state.emailAfterLogin);
+    console.log("acaaa", saveEmail);
     const [data, setData] = useState({
         email: "",
         password: "",
     });
-    // useEffect(() => {
-    // dispatch(postLogin());
-    // console.log(data);
-    // }, [dispatch, data]);
+
     const handleChange = (e) => {
         setData({
             ...data,
@@ -25,7 +26,13 @@ export default function Logear() {
         event.preventDefault();
         if (!data.email) return alert("🖋️ Primero complete los campos...");
         dispatch(postLogin(data));
-        console.log("Logeadooooooo");
+        // Filtro la coincidencia en el usuario logeado para guardarlo en el estado global.
+        const usersArr = users?.filter((e) => e.email == data.email);
+        console.log("Logeadooooooo", usersArr.email);
+        dispatch(saveEmailAfterLogin(usersArr.email));
+        if (saveEmail) {
+            return navigate("/");
+        }
     };
 
     return (

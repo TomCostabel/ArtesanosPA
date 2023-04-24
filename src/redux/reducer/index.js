@@ -1,8 +1,13 @@
-import { GET_ALL_PRODUCTS, GET_ALL_USERS } from "../actions/index.js";
+import {
+    GET_ALL_PRODUCTS,
+    GET_ALL_USERS,
+    GET_EMAIL_AFTERLOGIN,
+} from "../actions/index.js";
 
 const initialState = {
     productos: [],
     users: [],
+    emailAfterLogin: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -16,6 +21,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: action.payload,
+            };
+        case GET_EMAIL_AFTERLOGIN:
+            return {
+                ...state,
+                emailAfterLogin: action.payload,
             };
         default:
             return state;
