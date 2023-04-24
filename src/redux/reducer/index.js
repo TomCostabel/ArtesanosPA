@@ -1,8 +1,4 @@
-import {
-    GET_ALL_PRODUCTS,
-    GET_ALL_USERS,
-    GET_EMAIL_AFTERLOGIN,
-} from "../actions/index.js";
+import { GET_ALL_PRODUCTS, GET_ALL_USERS } from "../actions/index.js";
 
 const initialState = {
     productos: [],
@@ -22,11 +18,7 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 users: action.payload,
             };
-        case GET_EMAIL_AFTERLOGIN:
-            return {
-                ...state,
-                emailAfterLogin: action.payload,
-            };
+
         default:
             return state;
     }

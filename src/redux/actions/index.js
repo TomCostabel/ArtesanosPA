@@ -1,7 +1,7 @@
 import axios from "axios";
 export const GET_ALL_PRODUCTS = "GET_ALL_PRODUCTS";
 export const GET_ALL_USERS = "GET_ALL_USERS";
-export const GET_EMAIL_AFTERLOGIN = "GET_EMAIL_AFTERLOGIN";
+// export const GET_EMAIL_AFTERLOGIN = "GET_EMAIL_AFTERLOGIN";
 export function getProducts() {
     return async function (dispatch) {
         try {
@@ -30,10 +30,14 @@ export function getUsers() {
 }
 
 export function postLogin(data) {
-    return async () => {
-        const login = await axios.post("http://localhost:3001/login", data);
-        return login;
-    };
+    try {
+        return async () => {
+            const login = await axios.post("http://localhost:3001/login", data);
+            return login;
+        };
+    } catch (error) {
+        console.log("el error es", error);
+    }
 }
 export function postRegister(data) {
     return async () => {
@@ -44,12 +48,12 @@ export function postRegister(data) {
         return register;
     };
 }
-export function saveEmailAfterLogin(payload) {
-    return function (dispatch) {
-        dispatch({
-            type: GET_EMAIL_AFTERLOGIN,
-            payload,
-        });
-        console.log(payload);
-    };
-}
+// export function saveEmailAfterLogin(payload) {
+//     return function (dispatch) {
+//         dispatch({
+//             type: GET_EMAIL_AFTERLOGIN,
+//             payload,
+//         });
+//         console.log(payload);
+//     };
+// }

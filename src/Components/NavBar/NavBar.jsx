@@ -4,9 +4,16 @@ import img from "../../assets/img/artesanosLogoWhite.jpg";
 // import img1 from "../../assets/img/ig.png";
 // import img2 from "../../assets/img/wsp.png";
 // import img3 from "../../assets/img/fb.png";
+import { Link, useNavigate } from "react-router-dom";
 
-import { Link } from "react-router-dom";
 export default function NavBar() {
+    const navigate = useNavigate();
+    const emailLogeado = localStorage.getItem("emailLogeado");
+
+    const cerrarSesion = () => {
+        localStorage.setItem("emailLogeado", []);
+        return navigate(0);
+    };
     return (
         <div className="container-navbar">
             <div className="logo-title-navBar">
@@ -36,9 +43,15 @@ export default function NavBar() {
                 <img className="img-ig" src={img3} />
             </div> */}
             <div className="login-logout">
-                <Link to="/Login">
-                    <h5>Login</h5>
-                </Link>
+                {!emailLogeado ? (
+                    <Link to="/Login">
+                        <h5>Iniciar Sesión</h5>
+                    </Link>
+                ) : (
+                    <button onClick={() => cerrarSesion()}>
+                        Cerrar Sesión
+                    </button>
+                )}
             </div>
         </div>
     );
