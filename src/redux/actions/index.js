@@ -1,7 +1,7 @@
 import axios from "axios";
 export const GET_ALL_PRODUCTS = "GET_ALL_PRODUCTS";
 export const GET_ALL_USERS = "GET_ALL_USERS";
-// export const GET_EMAIL_AFTERLOGIN = "GET_EMAIL_AFTERLOGIN";
+export const GET_CART_USER = "GET_CART_USER";
 export function getProducts() {
     return async function (dispatch) {
         try {
@@ -48,12 +48,17 @@ export function postRegister(data) {
         return register;
     };
 }
-// export function saveEmailAfterLogin(payload) {
-//     return function (dispatch) {
-//         dispatch({
-//             type: GET_EMAIL_AFTERLOGIN,
-//             payload,
-//         });
-//         console.log(payload);
-//     };
-// }
+export function getCartUser(email) {
+    return async function (dispatch) {
+        try {
+            console.log("actioooon", email);
+            let res = await axios.get(`http://localhost:3001/carrito/${email}`);
+            dispatch({
+                type: GET_CART_USER,
+                payload: res.data.items,
+            });
+        } catch (error) {
+            console.log(error);
+        }
+    };
+}

@@ -1,9 +1,13 @@
-import { GET_ALL_PRODUCTS, GET_ALL_USERS } from "../actions/index.js";
+import {
+    GET_ALL_PRODUCTS,
+    GET_ALL_USERS,
+    GET_CART_USER,
+} from "../actions/index.js";
 
 const initialState = {
     productos: [],
     users: [],
-    emailAfterLogin: [],
+    carritoUser: [],
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -17,6 +21,11 @@ const rootReducer = (state = initialState, action) => {
             return {
                 ...state,
                 users: action.payload,
+            };
+        case GET_CART_USER:
+            return {
+                ...state,
+                carritoUser: action.payload,
             };
 
         default:

@@ -43,6 +43,9 @@ export default function NavBar() {
                 <img className="img-ig" src={img3} />
             </div> */}
             <div className="login-logout">
+                <Link to="/carrito">
+                    <h6>Carrito</h6>
+                </Link>
                 {!emailLogeado ? (
                     <Link to="/Login">
                         <h5>Iniciar Sesión</h5>
