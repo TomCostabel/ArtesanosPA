@@ -2,6 +2,7 @@ import axios from "axios";
 export const GET_ALL_PRODUCTS = "GET_ALL_PRODUCTS";
 export const GET_ALL_USERS = "GET_ALL_USERS";
 export const GET_CART_USER = "GET_CART_USER";
+
 export function getProducts() {
     return async function (dispatch) {
         try {
@@ -28,7 +29,6 @@ export function getUsers() {
         }
     };
 }
-
 export function postLogin(data) {
     try {
         return async () => {
@@ -51,7 +51,6 @@ export function postRegister(data) {
 export function getCartUser(email) {
     return async function (dispatch) {
         try {
-            console.log("actioooon", email);
             let res = await axios.get(`http://localhost:3001/carrito/${email}`);
             dispatch({
                 type: GET_CART_USER,

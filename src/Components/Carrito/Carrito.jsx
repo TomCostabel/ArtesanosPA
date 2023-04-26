@@ -9,9 +9,8 @@ export default function Carrito() {
     const dispatch = useDispatch();
     const carritoUser = useSelector((state) => state.carritoUser);
     const userLogeado = localStorage.getItem("emailLogeado");
-    // console.log(userLogeado);
+    let totalPagar = 0;
 
-    // console.log(carritoUser);
     useEffect(() => {
         dispatch(getCartUser(userLogeado));
     }, [dispatch]);
@@ -21,8 +20,14 @@ export default function Carrito() {
             <div className="principal-carrito">
                 <div className="container-carrito">
                     {carritoUser?.map((e) => {
+                        const pricePorQuantity = e.price * e.quantity;
+                        totalPagar = totalPagar + pricePorQuantity;
+
                         return (
-                            <div className="container-cada-producto" key={e.id}>
+                            <div
+                                className="container-cada-producto"
+                                key={e._id}
+                            >
                                 <img
                                     src={e.images}
                                     className="img-producto-carrito"
@@ -41,13 +46,16 @@ export default function Carrito() {
                                     </h3>
                                     <h6 className="button-mas-menos">+</h6>
                                 </div>
-
                                 <h4 className="container-price">
                                     ${e.price * e.quantity}
                                 </h4>
                             </div>
                         );
                     })}
+                </div>
+                <div>
+                    <div>${totalPagar}</div>
+                    <button>Pagar</button>
                 </div>
             </div>
         </div>
