@@ -2,8 +2,14 @@ import React from "react";
 import NavBar from "../NavBar/NavBar";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import { getCartUser } from "../../redux/actions";
+import {
+    deleteProductoCarrito,
+    getCartUser,
+    restarUnoCantidad,
+    sumarUnoCantidad,
+} from "../../redux/actions";
 import "../Carrito/Carrito.css";
+import { Link } from "react-router-dom";
 
 export default function Carrito() {
     const dispatch = useDispatch();
@@ -13,7 +19,7 @@ export default function Carrito() {
 
     useEffect(() => {
         dispatch(getCartUser(userLogeado));
-    }, [dispatch]);
+    }, [dispatch, carritoUser]);
     return (
         <div>
             <NavBar />
@@ -23,29 +29,68 @@ export default function Carrito() {
                         const pricePorQuantity = e.price * e.quantity;
                         totalPagar = totalPagar + pricePorQuantity;
 
+                        // -------------------- DATA PARA EL ACTION----------------------->
+                        let data = {
+                            email: userLogeado,
+                            productId: e.productId,
+                        };
+
                         return (
                             <div
                                 className="container-cada-producto"
-                                key={e._id}
+                                key={e.productId}
                             >
-                                <img
-                                    src={e.images}
-                                    className="img-producto-carrito"
-                                    alt="imgagen para carrito"
-                                />
+                                <Link to={`/propiedades/${e.productId}`}>
+                                    <img
+                                        src={e.images}
+                                        className="img-producto-carrito"
+                                        alt="img"
+                                    />
+                                </Link>
                                 <div className="titulo-eliminar">
                                     <h3 className="container-titulo">
                                         {e.titulo}
                                     </h3>
-                                    <h6 className="eliminar">Eliminar</h6>
+
+                                    {/* ------------------Eliminar producto------------------ */}
+                                    <h6
+                                        onClick={() =>
+                                            dispatch(
+                                                deleteProductoCarrito(data)
+                                            )
+                                        }
+                                        className="eliminar"
+                                    >
+                                        Eliminar
+                                    </h6>
                                 </div>
                                 <div className="container-quantity">
-                                    <h6 className="button-mas-menos">-</h6>
+                                    {/* ------------------Restar producto------------------- */}
+
+                                    <h6
+                                        onClick={() =>
+                                            dispatch(restarUnoCantidad(data))
+                                        }
+                                        className="button-mas-menos"
+                                    >
+                                        -
+                                    </h6>
                                     <h3 className="numero-quantity">
                                         {e.quantity}
                                     </h3>
-                                    <h6 className="button-mas-menos">+</h6>
+                                    {/* ------------------Sumar producto------------------ */}
+
+                                    <h6
+                                        onClick={() =>
+                                            dispatch(sumarUnoCantidad(data))
+                                        }
+                                        className="button-mas-menos"
+                                    >
+                                        +
+                                    </h6>
                                 </div>
+                                {/* ------------------Total productos a pagar------------- */}
+
                                 <h4 className="container-price">
                                     ${e.price * e.quantity}
                                 </h4>

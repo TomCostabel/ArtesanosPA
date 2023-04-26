@@ -61,3 +61,55 @@ export function getCartUser(email) {
         }
     };
 }
+export function deleteProductoCarrito(data) {
+    try {
+        return async () => {
+            const eliminar = await axios.post(
+                "http://localhost:3001/deleteProduct",
+                data
+            );
+            return eliminar;
+        };
+    } catch (error) {
+        console.log("el error es", error);
+    }
+}
+export function agregarProductoAlCarrito(data) {
+    try {
+        return async () => {
+            const agregar = await axios.post(
+                "http://localhost:3001/carritoAdd",
+                data
+            );
+            return agregar;
+        };
+    } catch (error) {
+        console.log("el error es", error);
+    }
+}
+export function restarUnoCantidad(data) {
+    try {
+        return async () => {
+            const restar = await axios.post(
+                "http://localhost:3001/restarUnoCantidad",
+                data
+            );
+            return restar;
+        };
+    } catch (error) {
+        console.log("el error es", error);
+    }
+}
+export function sumarUnoCantidad(data) {
+    try {
+        return async () => {
+            const sumar = await axios.post(
+                "http://localhost:3001/sumarUnoCantidad",
+                data
+            );
+            return sumar;
+        };
+    } catch (error) {
+        console.log("el error es", error);
+    }
+}

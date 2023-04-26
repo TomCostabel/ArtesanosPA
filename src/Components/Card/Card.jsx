@@ -1,7 +1,18 @@
 import React from "react";
 import "../Card/Card.css";
 import { Link } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { agregarProductoAlCarrito } from "../../redux/actions";
 export default function Card(props) {
+    const dispatch = useDispatch();
+    const userLogeado = localStorage.getItem("emailLogeado");
+
+    const data = {
+        email: userLogeado,
+        productId: props.id,
+        quantity: 1,
+    };
+    console.log(data);
     return (
         <div className="container-centrado-cards">
             <div className="container-card">
@@ -17,7 +28,12 @@ export default function Card(props) {
                 </div>
                 <h5 className="price-card">${props.price}</h5>
                 <div className="container-button">
-                    <h5 className="agregar-carrito">Agregar al carrito</h5>
+                    <h5
+                        onClick={() => dispatch(agregarProductoAlCarrito(data))}
+                        className="agregar-carrito"
+                    >
+                        Agregar al carrito
+                    </h5>
                 </div>
             </div>
         </div>
