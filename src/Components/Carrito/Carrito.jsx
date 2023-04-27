@@ -16,7 +16,7 @@ export default function Carrito() {
     const carritoUser = useSelector((state) => state.carritoUser);
     const userLogeado = localStorage.getItem("emailLogeado");
     let totalPagar = 0;
-
+    // console.log(carritoUser);
     useEffect(() => {
         dispatch(getCartUser(userLogeado));
     }, [dispatch, carritoUser]);

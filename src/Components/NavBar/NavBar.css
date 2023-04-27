@@ -49,15 +49,10 @@
     align-items: center;
     justify-content: center;
     width: 400px;
-    gap: 20px;
+    gap: 70px;
 }
 @media (max-width: 700px) {
     .logo-navBar {
-        /* -webkit-box-shadow: -4px 2px 18px 0px #080808;
-        -moz-box-shadow: -4px 2px 18px 0px #000000;
-        box-shadow: -4px 2px 18px 0px #00000038;
-        width: 40px;
-        height: 40px; */
         display: none;
     }
     .title-navBar {
@@ -84,4 +79,35 @@
     .logo-title-navBar {
         width: 50px;
     }
-} ;
+}
+.carrito-png {
+    width: 35px;
+    margin-top: -5px;
+}
+
+.button-cerrar-sesion {
+    background-color: #fffcfc;
+    border: 2px solid rgba(0, 0, 0, 0.411);
+    color: rgba(0, 0, 0, 0.795);
+    width: 113px;
+    height: 40px;
+    font-size: 12px;
+    font-weight: 800;
+    transition: 0.3s;
+}
+
+.button-cerrar-sesion:hover {
+    background-color: black;
+    color: white;
+}
+.numero-sobre-carrito {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 20px;
+    font-size: 13px;
+    margin-left: 9px;
+    font-weight: 500;
+    margin-top: -10px;
+}

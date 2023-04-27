@@ -12,7 +12,7 @@ export default function Card(props) {
         productId: props.id,
         quantity: 1,
     };
-    console.log(data);
+
     return (
         <div className="container-centrado-cards">
             <div className="container-card">

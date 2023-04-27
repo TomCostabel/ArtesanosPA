@@ -15,7 +15,16 @@ const rootReducer = (state = initialState, action) => {
         case GET_ALL_PRODUCTS:
             return {
                 ...state,
-                productos: action.payload,
+                productos: action.payload.sort(function (a, b) {
+                    if (a.id > b.id) {
+                        return 1;
+                    }
+                    if (a.id < b.id) {
+                        return -1;
+                    }
+
+                    return 0;
+                }),
             };
         case GET_ALL_USERS:
             return {

@@ -4,16 +4,33 @@ import img from "../../assets/img/artesanosLogoWhite.jpg";
 // import img1 from "../../assets/img/ig.png";
 // import img2 from "../../assets/img/wsp.png";
 // import img3 from "../../assets/img/fb.png";
+import imgCarrito from "../../assets/img/carrito2.png";
 import { Link, useNavigate } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { getCartUser } from "../../redux/actions";
 
 export default function NavBar() {
     const navigate = useNavigate();
+    const dispatch = useDispatch();
     const emailLogeado = localStorage.getItem("emailLogeado");
-
+    const carritoUser = useSelector((state) => state.carritoUser);
     const cerrarSesion = () => {
         localStorage.setItem("emailLogeado", []);
         return navigate(0);
     };
+    let cantidadProductosCarrito = 0;
+    carritoUser?.forEach((e) => {
+        cantidadProductosCarrito = cantidadProductosCarrito + e.quantity;
+    });
+    // console.log(cantidadProductosCarrito);
+
+    useEffect(() => {
+        if (emailLogeado) {
+            dispatch(getCartUser(emailLogeado));
+        }
+    }, [dispatch, carritoUser]);
+
     return (
         <div className="container-navbar">
             <div className="logo-title-navBar">
@@ -43,18 +60,34 @@ export default function NavBar() {
                 <img className="img-ig" src={img3} />
             </div> */}
             <div className="login-logout">
-                <Link to="/carrito">
-                    <h6>Carrito</h6>
-                </Link>
-                {!emailLogeado ? (
-                    <Link to="/Login">
-                        <h5>Iniciar Sesión</h5>
+                <div>
+                    <Link to="/carrito">
+                        <div>
+                            {emailLogeado ? (
+                                <div className="numero-sobre-carrito">
+                                    {cantidadProductosCarrito}
+                                </div>
+                            ) : null}
+                            <img className="carrito-png" src={imgCarrito} />
+                        </div>
                     </Link>
-                ) : (
-                    <button onClick={() => cerrarSesion()}>
-                        Cerrar Sesión
-                    </button>
-                )}
+                </div>
+                <div>
+                    {!emailLogeado ? (
+                        <Link to="/Login">
+                            <button className="button-cerrar-sesion">
+                                Iniciar Sesión
+                            </button>
+                        </Link>
+                    ) : (
+                        <button
+                            className="button-cerrar-sesion"
+                            onClick={() => cerrarSesion()}
+                        >
+                            Cerrar Sesión
+                        </button>
+                    )}
+                </div>
             </div>
         </div>
     );
