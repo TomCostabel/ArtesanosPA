@@ -9,7 +9,6 @@ import { agregarProductoAlCarrito, getProducts } from "../../redux/actions";
 export default function CardDetail() {
     const dispatch = useDispatch();
     const productos = useSelector((state) => state.productos);
-    console.log(productos);
     useEffect(() => {
         dispatch(getProducts());
     }, [dispatch]);

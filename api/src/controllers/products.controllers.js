@@ -293,17 +293,17 @@ const addProductToCart = async (req, res) => {
                     binary_mode: true,
                     items: [
                         {
-                            title: product.titulo,
-                            description: product.descripcion,
-                            picture_url: product.image,
+                            title: product?.titulo,
+                            description: product?.descripcion,
+                            picture_url: product?.image,
                             quantity: 1,
                             currency_id: "ARS",
-                            unit_price: product.price,
+                            unit_price: product?.price,
                         },
                     ],
                     payer: {
-                        name: user.name,
-                        email: user.email,
+                        name: user?.name,
+                        email: user?.email,
                     },
                     back_urls: {
                         success: "https://success.com",
