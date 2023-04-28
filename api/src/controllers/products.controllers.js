@@ -37,11 +37,13 @@ const putProducts = async (req, res) => {
     //     "price": 900
     //   }
     // -------------------------------------------------------------------------->
-    const { ID } = req.params;
+    const { id } = req.params;
+    const idNum = parseInt(id);
     const { stock, price } = req.body;
+
     try {
         const product = await ArtesanosProducts.findOneAndUpdate(
-            { ID },
+            { id: idNum },
             { stock, price },
             // new:true indica que devuelve el documento modificado después de aplicar la actualización
             { new: true }
@@ -170,7 +172,7 @@ const postLogin = async (req, res) => {
     }
 };
 
-//--------------------------getUsers------------------------------->
+//---------=---------------getUsers----------------------------->
 const getUsers = async (req, res) => {
     try {
         const users = await User.find();

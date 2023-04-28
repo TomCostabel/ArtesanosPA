@@ -1,24 +1,44 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import NavBar from "../NavBar/NavBar";
 import { useParams } from "react-router-dom";
 // import Productos from "../../productos.json";
 import "../CardDetail/CardDetail.css";
 import { useDispatch, useSelector } from "react-redux";
-import { agregarProductoAlCarrito, getProducts } from "../../redux/actions";
+import {
+    actualizarStockYPrecio,
+    agregarProductoAlCarrito,
+    getProducts,
+} from "../../redux/actions";
 
 export default function CardDetail() {
     const dispatch = useDispatch();
     const productos = useSelector((state) => state.productos);
-    useEffect(() => {
-        dispatch(getProducts());
-    }, [dispatch]);
     const { id } = useParams();
     const userLogeado = localStorage.getItem("emailLogeado");
 
+    const [dataUpdate, setDataUpdate] = useState({
+        stock: 0,
+        price: 0,
+    });
     const data = {
         email: userLogeado,
         productId: id,
         quantity: 1,
+    };
+    useEffect(() => {
+        dispatch(getProducts());
+    }, [dispatch, productos]);
+
+    const handleChange = (e) => {
+        // console.log(dataUpdate);
+        setDataUpdate({
+            ...dataUpdate,
+            [e.target.name]: e.target.value,
+        });
+    };
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+        dispatch(actualizarStockYPrecio(dataUpdate, id));
     };
     return (
         <div>
@@ -54,6 +74,32 @@ export default function CardDetail() {
                                 >
                                     Agregar al carrito
                                 </h5>
+                            </div>
+                            <div>
+                                {userLogeado ==
+                                "tomasperalta1997@hotmail.com" ? (
+                                    <form onSubmit={handleSubmit}>
+                                        nuevo precio
+                                        <input
+                                            type="number"
+                                            name="price"
+                                            value={dataUpdate.price}
+                                            placeholder="nuevo precio"
+                                            onChange={(e) => handleChange(e)}
+                                        />
+                                        nuevo stock
+                                        <input
+                                            type="number"
+                                            name="stock"
+                                            value={dataUpdate.stock}
+                                            placeholder="nuevo stock"
+                                            onChange={(e) => handleChange(e)}
+                                        />
+                                        <button type="submit">
+                                            Cambiar stock y precio{" "}
+                                        </button>
+                                    </form>
+                                ) : null}
                             </div>
                         </div>
                     </div>

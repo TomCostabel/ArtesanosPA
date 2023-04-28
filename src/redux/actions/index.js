@@ -113,3 +113,17 @@ export function sumarUnoCantidad(data) {
         console.log("el error es", error);
     }
 }
+export function actualizarStockYPrecio(data, id) {
+    try {
+        console.log(data, id);
+        return async () => {
+            const update = await axios.put(
+                `http://localhost:3001/products/${id}`,
+                data
+            );
+            return update;
+        };
+    } catch (error) {
+        console.log(error);
+    }
+}
