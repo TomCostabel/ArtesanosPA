@@ -275,6 +275,7 @@ const addProductToCart = async (req, res) => {
                 quantity: quantity,
                 titulo: product.titulo,
                 price: product.price,
+                categoria: product.categoria,
                 images: product.image,
             });
         }

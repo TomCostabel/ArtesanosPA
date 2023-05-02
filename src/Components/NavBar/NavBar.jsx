@@ -17,6 +17,7 @@ export default function NavBar() {
     const carritoUser = useSelector((state) => state.carritoUser);
     const cerrarSesion = () => {
         localStorage.setItem("emailLogeado", []);
+
         return navigate(0);
     };
     let cantidadProductosCarrito = 0;
@@ -54,11 +55,7 @@ export default function NavBar() {
                     </h2>
                 </Link>
             </div>
-            {/* <div >
-                <img className="img-ig" src={img1} />
-                <img className="img-ig" src={img2} />
-                <img className="img-ig" src={img3} />
-            </div> */}
+
             <div className="login-logout">
                 <div>
                     <Link to="/carrito">

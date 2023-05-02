@@ -10,16 +10,17 @@ import {
 } from "../../redux/actions";
 import "../Carrito/Carrito.css";
 import { Link } from "react-router-dom";
+import img from "../../assets/img/mp.png";
 
 export default function Carrito() {
     const dispatch = useDispatch();
     const carritoUser = useSelector((state) => state.carritoUser);
     const userLogeado = localStorage.getItem("emailLogeado");
     let totalPagar = 0;
-    // console.log(carritoUser);
+
     useEffect(() => {
         dispatch(getCartUser(userLogeado));
-    }, [dispatch, carritoUser]);
+    }, []);
     return (
         <div>
             <NavBar />
@@ -51,6 +52,7 @@ export default function Carrito() {
                                     <h3 className="container-titulo">
                                         {e.titulo}
                                     </h3>
+                                    <h6 className="categoria">{e.categoria}</h6>
 
                                     {/* ------------------Eliminar producto------------------ */}
                                     <h6
@@ -98,9 +100,16 @@ export default function Carrito() {
                         );
                     })}
                 </div>
-                <div>
+                <div className="container-pagar">
                     <div>${totalPagar}</div>
-                    <button>Pagar</button>
+                    <div className="button-logo-pagar">
+                        <button>Pagar</button>
+                        <img
+                            className="mp-logo"
+                            src={img}
+                            alt="logo metodo de pago"
+                        />
+                    </div>
                 </div>
             </div>
         </div>

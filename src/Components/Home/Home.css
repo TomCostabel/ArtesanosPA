@@ -1,7 +1,7 @@
 .container-home {
     /* display: flex; */
     background-color: #fff1eb;
-    /* height: 100vh; */
+    height: 100vh;
     user-select: none;
 }
 .title-home {
