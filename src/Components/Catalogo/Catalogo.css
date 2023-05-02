@@ -20,7 +20,9 @@
     color: white;
     transition: 0.3s;
     cursor: pointer;
-    margin-top: -300px;
+    margin-top: -200px;
+
+    font-family: serif;
 }
 .card-individual-catalogo:hover {
     border: 2px solid rgb(0, 0, 0);
@@ -47,4 +49,36 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+}
+
+@media (max-width: 1500px) {
+    .card-individual-catalogo {
+        width: 120px;
+    }
+    .titulo-catalogo {
+        width: 100px;
+        font-size: 10px;
+        font-weight: 800;
+    }
+}
+@media (max-width: 600px) {
+    .container-principal-categoria {
+        flex-direction: column;
+        margin-top: 10px;
+        width: 300px;
+    }
+    .card-individual-catalogo {
+        width: 220px;
+        margin-top: -20px;
+    }
+
+    .titulo-catalogo {
+        width: 200px;
+        font-size: 12px;
+        font-weight: 800;
+    }
+    .img-catalogo-inicio {
+        width: 250px;
+        /* display: none; */
+    }
 }

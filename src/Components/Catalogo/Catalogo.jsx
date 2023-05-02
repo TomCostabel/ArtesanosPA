@@ -25,51 +25,51 @@ export default function Catalogo() {
                             src={imgCatalogo}
                         />
                         <div className="container-principal-categoria">
-                            {/* <Link to="/Catalogo/DijesEnBrutoConAlpaca"> */}
-                            <div className="card-individual-catalogo">
-                                {/* <img className="img-catalogo" src={img} /> */}
+                            <Link to="/Catalogo/DijesEnBrutoConAlpaca">
+                                <div className="card-individual-catalogo">
+                                    {/* <img className="img-catalogo" src={img} /> */}
 
-                                <h3 className="titulo-catalogo">
-                                    DIJES EN BRUTO CON ALPACA
-                                </h3>
-                            </div>
-                            {/* </Link> */}
-                            {/* <Link to="/Catalogo/DijesEnBruto"> */}
-                            <div className="card-individual-catalogo">
-                                {/* <img className="img-catalogo" src={img} /> */}
+                                    <h3 className="titulo-catalogo">
+                                        DIJES EN BRUTO CON ALPACA
+                                    </h3>
+                                </div>
+                            </Link>
+                            <Link to="/Catalogo/DijesEnBruto">
+                                <div className="card-individual-catalogo">
+                                    {/* <img className="img-catalogo" src={img} /> */}
 
-                                <h3 className="titulo-catalogo">
-                                    DIJES EN BRUTO
-                                </h3>
-                            </div>
-                            {/* </Link> */}
-                            {/* <Link to="/Catalogo/DijesRolados"> */}
-                            <div className="card-individual-catalogo">
-                                {/* <img className="img-catalogo" src={img} /> */}
+                                    <h3 className="titulo-catalogo">
+                                        DIJES EN BRUTO
+                                    </h3>
+                                </div>
+                            </Link>
+                            <Link to="/Catalogo/DijesRolados">
+                                <div className="card-individual-catalogo">
+                                    {/* <img className="img-catalogo" src={img} /> */}
 
-                                <h3 className="titulo-catalogo">
-                                    DIJES ROLADOS
-                                </h3>
-                            </div>
-                            {/* </Link> */}
+                                    <h3 className="titulo-catalogo">
+                                        DIJES ROLADOS
+                                    </h3>
+                                </div>
+                            </Link>
 
-                            {/* <Link to="/Catalogo/DijesImportados"> */}
-                            <div className="card-individual-catalogo">
-                                {/* <img className="img-catalogo" src={img} /> */}
+                            <Link to="/Catalogo/DijesImportados">
+                                <div className="card-individual-catalogo">
+                                    {/* <img className="img-catalogo" src={img} /> */}
 
-                                <h3 className="titulo-catalogo">
-                                    DIJES IMPORTADOS
-                                </h3>
-                            </div>
-                            {/* </Link> */}
-                            {/* <Link to="/Catalogo/DijesConFormas"> */}
-                            <div className="card-individual-catalogo">
-                                {/* <img className="img-catalogo" src={img} /> */}
-                                <h3 className="titulo-catalogo">
-                                    DIJES CON FORMAS
-                                </h3>
-                            </div>
-                            {/* </Link> */}
+                                    <h3 className="titulo-catalogo">
+                                        DIJES IMPORTADOS
+                                    </h3>
+                                </div>
+                            </Link>
+                            <Link to="/Catalogo/DijesConFormas">
+                                <div className="card-individual-catalogo">
+                                    {/* <img className="img-catalogo" src={img} /> */}
+                                    <h3 className="titulo-catalogo">
+                                        DIJES CON FORMAS
+                                    </h3>
+                                </div>
+                            </Link>
                         </div>
                     </div>
                 </div>
