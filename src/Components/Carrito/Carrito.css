@@ -130,6 +130,30 @@
     justify-content: center;
     gap: 10px;
 }
+/* --------------CARRITO VACIO-------------- */
+.container-carrito-vacio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 100px;
+}
+.img-carrito-vacio {
+    width: 500px;
+}
+
+.carrito-vacio-text {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.76);
+    border-radius: 4px;
+    width: 450px;
+    color: white;
+    font-weight: 500;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+}
 
 @media (max-width: 600px) {
     .container-carrito {
@@ -161,5 +185,14 @@
     }
     .mp-logo {
         width: 60px;
+    }
+
+    .img-carrito-vacio {
+        width: 300px;
+    }
+
+    .carrito-vacio-text {
+        width: 300px;
+        font-size: 16px;
     }
 }
