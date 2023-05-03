@@ -67,9 +67,16 @@ export default function CardDetail() {
                                     ${productos[id - 1]?.price}
                                 </h1>
                                 <h5
-                                    onClick={() =>
-                                        dispatch(agregarProductoAlCarrito(data))
-                                    }
+                                    onClick={() => {
+                                        dispatch(
+                                            agregarProductoAlCarrito(data)
+                                        ),
+                                            swal(
+                                                "Producto agregado ",
+                                                " ",
+                                                "success"
+                                            );
+                                    }}
                                     className="button-detail"
                                 >
                                     Agregar al carrito

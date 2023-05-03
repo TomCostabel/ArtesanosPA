@@ -79,7 +79,24 @@ export default function NavBar() {
                     ) : (
                         <button
                             className="button-cerrar-sesion"
-                            onClick={() => cerrarSesion()}
+                            onClick={() => {
+                                swal({
+                                    title: "Estas seguro/a ?",
+                                    text: "La sesión se cerrara",
+                                    icon: "warning",
+                                    buttons: true,
+                                    dangerMode: true,
+                                }).then((willDelete) => {
+                                    if (willDelete) {
+                                        cerrarSesion();
+                                        swal("Sesión cerrada. ", {
+                                            icon: "success",
+                                        });
+                                    } else {
+                                        swal("La sesión permanecera abierta.");
+                                    }
+                                });
+                            }}
                         >
                             Cerrar Sesión
                         </button>

@@ -4,6 +4,7 @@ import NavBar from "../NavBar/NavBar";
 import Loading from "../Loading/Loading";
 import { useDispatch, useSelector } from "react-redux";
 import { getProducts } from "../../redux/actions";
+import swal from "sweetalert";
 
 export default function DijesConFormas() {
     const [loading, setLoading] = useState(true);
