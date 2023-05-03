@@ -20,10 +20,19 @@ export default function Logear() {
         dispatch(getUsers());
     }, [dispatch, data]);
     const handleChange = (e) => {
-        setData({
-            ...data,
-            [e.target.name]: e.target.value,
-        });
+        if (e.target.name === "email") {
+            setData({
+                ...data,
+
+                [e.target.name]: e.target.value.toLowerCase(),
+            });
+        } else {
+            setData({
+                ...data,
+
+                [e.target.name]: e.target.value,
+            });
+        }
     };
     const handleSubmit = async (event) => {
         event.preventDefault();

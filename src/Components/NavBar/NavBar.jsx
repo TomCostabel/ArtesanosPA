@@ -21,9 +21,11 @@ export default function NavBar() {
         return navigate(0);
     };
     let cantidadProductosCarrito = 0;
-    carritoUser?.forEach((e) => {
-        cantidadProductosCarrito = cantidadProductosCarrito + e.quantity;
-    });
+    if (carritoUser.length) {
+        carritoUser?.forEach((e) => {
+            cantidadProductosCarrito = cantidadProductosCarrito + e.quantity;
+        });
+    }
     // console.log(cantidadProductosCarrito);
 
     useEffect(() => {
@@ -58,16 +60,30 @@ export default function NavBar() {
 
             <div className="login-logout">
                 <div>
-                    <Link to="/carrito">
-                        <div>
-                            {emailLogeado ? (
-                                <div className="numero-sobre-carrito">
-                                    {cantidadProductosCarrito}
-                                </div>
-                            ) : null}
-                            <img className="carrito-png" src={imgCarrito} />
-                        </div>
-                    </Link>
+                    {emailLogeado ? (
+                        <Link to="/carrito">
+                            <div>
+                                {emailLogeado ? (
+                                    <div className="numero-sobre-carrito">
+                                        {cantidadProductosCarrito}
+                                    </div>
+                                ) : null}
+                                <img className="carrito-png" src={imgCarrito} />
+                            </div>
+                        </Link>
+                    ) : (
+                        <img
+                            onClick={() => {
+                                swal(
+                                    "",
+                                    "Antes de esta acción debe iniciar sesión ",
+                                    "warning"
+                                );
+                            }}
+                            className="carrito-png"
+                            src={imgCarrito}
+                        />
+                    )}
                 </div>
                 <div>
                     {!emailLogeado ? (

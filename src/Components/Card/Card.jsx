@@ -28,15 +28,30 @@ export default function Card(props) {
                 </div>
                 <h5 className="price-card">${props.price}</h5>
                 <div className="container-button">
-                    <h5
-                        onClick={() => {
-                            dispatch(agregarProductoAlCarrito(data)),
-                                swal("Producto agregado ", " ", "success");
-                        }}
-                        className="agregar-carrito"
-                    >
-                        Agregar al carrito
-                    </h5>
+                    {userLogeado ? (
+                        <h5
+                            onClick={() => {
+                                dispatch(agregarProductoAlCarrito(data)),
+                                    swal("Producto agregado ", " ", "success");
+                            }}
+                            className="agregar-carrito"
+                        >
+                            Agregar al carrito
+                        </h5>
+                    ) : (
+                        <h5
+                            onClick={() => {
+                                swal(
+                                    "",
+                                    "Antes de esta acción debe iniciar sesión ",
+                                    "warning"
+                                );
+                            }}
+                            className="agregar-carrito"
+                        >
+                            Agregar al carrito
+                        </h5>
+                    )}
                 </div>
             </div>
         </div>

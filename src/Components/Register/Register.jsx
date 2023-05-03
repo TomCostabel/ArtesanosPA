@@ -20,20 +20,28 @@ export default function Register() {
     const usersArr = users.filter((e) => e.email === data.email);
     console.log("aca la coincidencia", usersArr);
     const handleChange = (e) => {
-        setData({
-            ...data,
-            [e.target.name]: e.target.value,
-        });
+        if (e.target.name === "email") {
+            setData({
+                ...data,
+
+                [e.target.name]: e.target.value.toLowerCase(),
+            });
+        } else {
+            setData({
+                ...data,
+
+                [e.target.name]: e.target.value,
+            });
+        }
     };
     const handleSubmit = (e) => {
         e.preventDefault();
         if (usersArr.length === 1) {
-            alert("Email ya registrado");
-            console.log(data);
+            swal("", "Email ya registrado", "warning");
             return;
         }
         if (data.password !== confirmPassword) {
-            alert("Las contraseñas no coinciden");
+            swal("", "Las contraseñas no coinciden", "warning");
             return;
         } else {
             dispatch(postRegister(data));
