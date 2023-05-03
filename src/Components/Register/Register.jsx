@@ -3,7 +3,7 @@ import "./Register.css";
 import NavBar from "../NavBar/NavBar";
 import { getUsers, postRegister } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
-
+import img from "../../assets/img/amatistaPNG.png";
 export default function Register() {
     const dispatch = useDispatch();
     const users = useSelector((state) => state.users);
@@ -18,7 +18,7 @@ export default function Register() {
         password: "",
     });
     const usersArr = users.filter((e) => e.email === data.email);
-    console.log("aca la coincidencia", usersArr);
+
     const handleChange = (e) => {
         if (e.target.name === "email") {
             setData({
@@ -54,9 +54,14 @@ export default function Register() {
             <NavBar />
             <div className="register-form-container">
                 <form onSubmit={handleSubmit}>
-                    <h2>Registro</h2>
+                    <div className="register-img">
+                        <h2>Registro</h2>
+                        <img className="img-registro" src={img} />
+                    </div>
                     <div className="form-group">
-                        <label htmlFor="name">Nombre</label>
+                        <h4 className="name-form" htmlFor="name">
+                            Nombre
+                        </h4>
                         <input
                             type="text"
                             name="name"
@@ -66,7 +71,9 @@ export default function Register() {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="email">Email</label>
+                        <h4 className="name-form" htmlFor="email">
+                            Email
+                        </h4>
                         <input
                             type="email"
                             name="email"
@@ -76,7 +83,9 @@ export default function Register() {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="password">Contraseña</label>
+                        <h4 className="name-form" htmlFor="password">
+                            Contraseña
+                        </h4>
                         <input
                             type="password"
                             name="password"
@@ -86,9 +95,9 @@ export default function Register() {
                         />
                     </div>
                     <div className="form-group">
-                        <label htmlFor="confirmPassword">
+                        <h4 className="name-form" htmlFor="confirmPassword">
                             Confirmar Contraseña
-                        </label>
+                        </h4>
                         <input
                             type="password"
                             name="confirmPassword"

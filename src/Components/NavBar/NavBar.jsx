@@ -26,7 +26,6 @@ export default function NavBar() {
             cantidadProductosCarrito = cantidadProductosCarrito + e.quantity;
         });
     }
-    // console.log(cantidadProductosCarrito);
 
     useEffect(() => {
         if (emailLogeado) {
