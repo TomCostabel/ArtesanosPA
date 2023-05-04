@@ -58,31 +58,19 @@ export default function NavBar() {
             </div>
 
             <div className="login-logout">
-                <div>
+                <div className="changuito">
                     {emailLogeado ? (
                         <Link to="/carrito">
-                            <div>
-                                {emailLogeado ? (
+                            {emailLogeado ? (
+                                <div>
                                     <div className="numero-sobre-carrito">
                                         {cantidadProductosCarrito}
                                     </div>
-                                ) : null}
-                                <img className="carrito-png" src={imgCarrito} />
-                            </div>
+                                </div>
+                            ) : null}
+                            <img className="carrito-png" src={imgCarrito} />
                         </Link>
-                    ) : (
-                        <img
-                            onClick={() => {
-                                swal(
-                                    "",
-                                    "Antes de esta acción debe iniciar sesión ",
-                                    "warning"
-                                );
-                            }}
-                            className="carrito-png"
-                            src={imgCarrito}
-                        />
-                    )}
+                    ) : null}
                 </div>
                 <div>
                     {!emailLogeado ? (

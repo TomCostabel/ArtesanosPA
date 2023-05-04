@@ -163,6 +163,9 @@
         height: 450px;
         width: 300px;
     }
+    .container-titulo {
+        height: 25px;
+    }
     .container-cada-producto {
         width: 280px;
     }

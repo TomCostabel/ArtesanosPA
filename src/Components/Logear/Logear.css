@@ -14,12 +14,6 @@ form {
     border-radius: 10px;
 }
 
-label {
-    display: block;
-    margin-bottom: 10px;
-    font-weight: bold;
-}
-
 input {
     padding: 5px;
     border-radius: 5px;

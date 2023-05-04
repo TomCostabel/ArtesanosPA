@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    height: 80vh;
     background-color: #ffffff;
 }
 
@@ -48,4 +48,15 @@ input {
     width: 250px;
     font-size: 1rem;
     margin-top: -15px;
+}
+@media (max-width: 700px) {
+    .form-group {
+        width: 250px;
+    }
+    input {
+        width: 230px;
+    }
+    .register-form-container {
+        height: 100vh;
+    }
 }
