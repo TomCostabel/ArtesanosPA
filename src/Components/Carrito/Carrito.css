@@ -28,6 +28,26 @@
     overflow-x: hidden;
     overflow: auto;
 }
+/* -------- Scrollbar CSS -------- */
+
+* {
+    scrollbar-width: auto;
+    scrollbar-color: #d1cccc #ffffff;
+}
+
+*::-webkit-scrollbar {
+    width: 16px;
+}
+
+*::-webkit-scrollbar-track {
+    background: #ffffff;
+}
+
+*::-webkit-scrollbar-thumb {
+    background-color: #b2b4b644;
+    border-radius: 10px;
+    border: 3px solid #ffffff;
+}
 /* --------------IMAGEN-------------- */
 .img-producto-carrito {
     margin-left: 10px;
@@ -124,6 +144,13 @@
 .mp-logo {
     width: 80px;
 }
+.totalPagar {
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    width: 100px;
+    height: 30px;
+}
 .button-logo-pagar {
     display: flex;
     align-items: center;
@@ -137,6 +164,7 @@
     align-items: center;
     justify-content: center;
     margin-top: 100px;
+    user-select: none;
 }
 .img-carrito-vacio {
     width: 500px;

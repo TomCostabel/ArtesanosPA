@@ -28,7 +28,7 @@ export default function Home() {
                                 nuestros productos.
                             </h2>
                             <Link to="/Catalogo">
-                                <h2 className="button-catalogo">Catalogo ➜</h2>
+                                <h2 className="button-catalogo">Catálogo ➜</h2>
                             </Link>
                         </div>
                         <img className="img-home" src={img} />

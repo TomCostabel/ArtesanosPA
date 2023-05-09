@@ -4,6 +4,7 @@
     align-items: center;
     height: 80vh;
     background-color: #ffffff;
+    user-select: none;
 }
 
 form {
@@ -27,7 +28,7 @@ form {
     display: flex;
 }
 .name-form {
-    font-size: 15px;
+    font-size: 13px;
     height: 20px;
     width: 200px;
 }
@@ -35,12 +36,19 @@ form {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    color: rgba(0, 0, 0, 0.671);
     margin-bottom: 15px;
     width: 270px;
     height: 100px;
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
 }
-
-input {
+.button-registrarse {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.title-registro {
+    font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.input-register {
     padding: 10px;
     border-radius: 5px;
     border: none;
@@ -52,8 +60,9 @@ input {
 @media (max-width: 700px) {
     .form-group {
         width: 250px;
+        height: 70px;
     }
-    input {
+    .input-register {
         width: 230px;
     }
     .register-form-container {

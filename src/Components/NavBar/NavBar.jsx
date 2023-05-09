@@ -52,7 +52,7 @@ export default function NavBar() {
                         target="_parent"
                         className="title-navBar-list"
                     >
-                        Catalogo
+                        Catálogo
                     </h2>
                 </Link>
             </div>

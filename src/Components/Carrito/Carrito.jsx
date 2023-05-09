@@ -150,7 +150,7 @@ export default function Carrito() {
                                 })}
                             </div>
                             <div className="container-pagar">
-                                <div>${totalPagar}</div>
+                                <div className="totalPagar">${totalPagar}</div>
                                 <div className="button-logo-pagar">
                                     <button>Pagar</button>
                                     <img

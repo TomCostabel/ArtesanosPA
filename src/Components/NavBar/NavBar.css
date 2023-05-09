@@ -50,6 +50,7 @@
     margin-left: -10px;
     justify-content: center;
     gap: 70px;
+    width: 400px;
 }
 
 .button-cerrar-sesion {
