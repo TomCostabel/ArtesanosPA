@@ -152,7 +152,9 @@ export default function Carrito() {
                             <div className="container-pagar">
                                 <div className="totalPagar">${totalPagar}</div>
                                 <div className="button-logo-pagar">
-                                    <button>Pagar</button>
+                                    <Link to="/Envios">
+                                        <button>Pagar</button>
+                                    </Link>
                                     <img
                                         className="mp-logo"
                                         src={img}

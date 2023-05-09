@@ -11,6 +11,7 @@ import DijesConFormas from "./Components/DijesConFormas/DijesConFormas";
 import Logear from "./Components/Logear/Logear";
 import Register from "./Components/Register/Register";
 import Carrito from "./Components/Carrito/Carrito";
+import Envios from "./Components/Envios/Envios";
 
 // import axios from "axios";
 
@@ -40,6 +41,7 @@ function App() {
             <Route path="/Login" element={<Logear />} />
             <Route path="/Register" element={<Register />} />
             <Route path="/Carrito" element={<Carrito />} />
+            <Route path="/Envios" element={<Envios />} />
         </Routes>
     );
 }
