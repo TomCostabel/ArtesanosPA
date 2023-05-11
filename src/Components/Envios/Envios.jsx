@@ -18,6 +18,9 @@ export default function () {
                 <div>
                     <NavBar />
                     <div className="container-centrado-envios">
+                        <h1 className="titulo-envios">
+                            Seleccione su opción de envío
+                        </h1>
                         <h2 className="envios-h2">
                             <img className="img-local" src={imgLocal} />
                             Retirar en local (Punta Alta)

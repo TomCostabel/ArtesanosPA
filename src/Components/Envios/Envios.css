@@ -6,6 +6,17 @@
     height: 85vh;
     user-select: none;
 }
+.titulo-envios {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 460px;
+    border-radius: 10px;
+    font-size: 30px;
+    background-color: black;
+    color: white;
+    height: 50px;
+}
 .envios-h2 {
     display: flex;
     align-items: center;
@@ -36,4 +47,23 @@
 .img-envio {
     width: 35px;
     margin-left: 15px;
+}
+@media (max-width: 700px) {
+    .titulo-envios {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 310px;
+        border-radius: 10px;
+        font-size: 18px;
+        background-color: black;
+        color: white;
+        height: 40px;
+    }
+
+    .envios-h2 {
+        width: 310px;
+        height: 70px;
+        font-size: 15px;
+    }
 }
