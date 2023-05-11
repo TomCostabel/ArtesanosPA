@@ -127,16 +127,16 @@ export function actualizarStockYPrecio(data, id) {
         console.log(error);
     }
 }
-// export function logout(email) {
-//     try {
-//         return async () => {
-//             const postLogout = await axios.post(
-//                 "http://localhost:3001/logout",
-//                 email
-//             );
-//             return postLogout;
-//         };
-//     } catch (error) {
-//         console.log("error en logout", error);
-//     }
-// }
+export function agregarInformacionEnvio(data) {
+    try {
+        return async () => {
+            const AddInfo = await axios.put(
+                "http://localhost:3001/agregarInformacionEnvio",
+                data
+            );
+            return AddInfo;
+        };
+    } catch (error) {
+        console.log("error en logout", error);
+    }
+}

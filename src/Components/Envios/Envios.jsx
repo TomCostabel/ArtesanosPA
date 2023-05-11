@@ -4,6 +4,7 @@ import "../Envios/Envios.css";
 import Loading from "../Loading/Loading";
 import imgLocal from "../../assets/img/local.webp";
 import imgEnvio from "../../assets/img/envio.png";
+import { Link } from "react-router-dom";
 
 export default function () {
     const [loading, setLoading] = useState(true);
@@ -21,18 +22,24 @@ export default function () {
                         <h1 className="titulo-envios">
                             Seleccione su opción de envío
                         </h1>
-                        <h2 className="envios-h2">
-                            <img className="img-local" src={imgLocal} />
-                            Retirar en local (Punta Alta)
-                        </h2>
-                        <h2 className="envios-h2">
-                            <img className="img-envio" src={imgEnvio} />
-                            Envio a domicilio (Otra ciudad)
-                        </h2>
-                        <h2 className="envios-h2">
-                            <img className="img-envio" src={imgEnvio} />
-                            Envio al correo (Otra ciudad)
-                        </h2>
+                        <Link to="/infoEnvios">
+                            <h2 className="envios-h2">
+                                <img className="img-local" src={imgLocal} />
+                                Retirar en local (Punta Alta)
+                            </h2>
+                        </Link>
+                        <Link to="/infoEnvios">
+                            <h2 className="envios-h2">
+                                <img className="img-envio" src={imgEnvio} />
+                                Envio a domicilio (Otra ciudad)
+                            </h2>
+                        </Link>
+                        <Link to="/infoEnvios">
+                            <h2 className="envios-h2">
+                                <img className="img-envio" src={imgEnvio} />
+                                Envio al correo (Otra ciudad)
+                            </h2>
+                        </Link>
                     </div>
                 </div>
             )}
