@@ -5,13 +5,16 @@ import img from "../../assets/img/amatistaPNG.png";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import "../InfoEnvios/InfoEnvios.css";
+import { agregarInformacionEnvio } from "../../redux/actions";
 export default function InfoEnvios() {
     const dispatch = useDispatch();
     const navigate = useNavigate();
     const users = useSelector((state) => state.users);
+    const userLogeado = localStorage.getItem("emailLogeado");
+
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState({
-        email: "",
+        email: userLogeado,
         provincia: " ",
         ciudad: "",
         direccion: " ",
@@ -34,29 +37,35 @@ export default function InfoEnvios() {
     };
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (!data.email) return alert("🖋️ Primero complete los campos...");
-        if (!data.password) return alert("🖋️ Primero complete los campos...");
 
         // ----Filtro la coincidencia en el usuario logeado para guardarlo en el estado local.------->
-        const usersArr = users?.filter((e) => e.email == data.email);
+        // const usersArr = users?.filter((e) => e.email == data.email);
 
-        if (!usersArr) {
-            return alert("🖋️ Email no encontrado en la base de datos");
-        }
-        if (usersArr[0]?.email !== data.email)
-            return alert(" Email o contraseña incorrecta");
+        // if (!usersArr) {
+        //     return alert("🖋️ Email no encontrado en la base de datos");
+        // }
+        // if (usersArr[0]?.email !== data.email)
+        //     return alert(" Email o contraseña incorrecta");
 
         //----------- Uso bcrypt desde el front con "bcryptjs" para comparar las PSS------------------>
-        const match = await bcrypt.compare(data.password, usersArr[0].password);
+        // const match = await bcrypt.compare(data.password, usersArr[0].password);
 
-        if (!match) {
-            return alert("Email o contraseña incorrecta");
+        if (
+            !data.email ||
+            !data.provincia ||
+            !data.ciudad ||
+            !data.direccion ||
+            !data.codigoPostal ||
+            !data.dni ||
+            !data.nombreApellido ||
+            !data.numeroCelular
+        ) {
+            return alert("🖋️ Primero complete los campos ...");
         }
         //--------------Mando la inf para el login y guardo el OBJ para validaciones------------------>
 
-        localStorage.setItem("emailLogeado", usersArr[0]?.email);
-        dispatch(postLogin(data));
-        // dispatch(saveEmailAfterLogin(usersArr));
+        // localStorage.setItem("emailLogeado", usersArr[0]?.email);
+        dispatch(agregarInformacionEnvio(data));
 
         return navigate("/");
     };
@@ -149,7 +158,7 @@ export default function InfoEnvios() {
                                 />
                             </h4>
                             <button className="button-login" type="submit">
-                                Login
+                                Enviar
                             </button>
                         </form>
                     </div>
