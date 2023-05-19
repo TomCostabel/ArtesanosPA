@@ -291,35 +291,55 @@ const addProductToCart = async (req, res) => {
 };
 
 //---------------- MERCADO PAGO ------------------------>
-const createPreference = async (product, user) => {
+const createPreference = async (req, res) => {
+    const user = await User.findOne({ email: req.body.email });
+
     // Busco el carrito del usuario por su email
-    let cart = await Cart.findOne({ user: email });
+    let cart = await Cart.findOne({ user: req.body.email });
+
+    if (!user) {
+        return res.status(404).json({ error: "Usuario no encontrado" });
+    }
     try {
-        if (!product || !user) {
+        if (!cart) {
             throw new Error("Producto o usuario no válido");
         }
-        // Configura el access_token
+        // Verificar si el carrito existe y es un array válido
+        if (!cart || !Array.isArray(cart.items)) {
+            return res
+                .status(404)
+                .json({ error: "Carrito no encontrado o inválido" });
+        }
+        // Configura el access_token y public_key
         mercadopago.configure({
             access_token: process.env.ACCESS_TOKEN,
+            public_key: process.env.PUBLIC_KEY,
         });
 
-        const items = cart.map((product) => {
+        const items = cart.items.map((product) => {
             return {
                 title: product?.title,
-                description: product?.description,
-                picture_url: product?.image,
+                // description: product?.description,
+                picture_url: product?.images,
                 quantity: product?.quantity,
                 currency_id: "ARS",
                 unit_price: product?.price,
             };
         });
+
         // Crea la preferencia de pago con los datos del producto y del usuario
         const preference = {
             binary_mode: true,
             items: items,
             payer: {
-                name: user?.name,
                 email: user?.email,
+                name: user?.nombreApellido,
+                provincia: user?.provincia,
+                ciudad: user?.ciudad,
+                codigoPostal: user?.codigoPostal,
+                direccion: user?.direccion,
+                dni: user?.dni,
+                numeroCelular: user?.numeroCelular,
             },
             back_urls: {
                 success: "https://success.com",
@@ -331,17 +351,19 @@ const createPreference = async (product, user) => {
 
         // Creo la preferencia en Mercado Pago y devuelve su id
         const response = await mercadopago.preferences.create(preference);
-        if (response.statusCode !== 201) {
-            throw new Error("Error al crear la preferencia de pago");
-        }
-        return response.body.id;
+
+        // Devolver la respuesta con la preferencia y el ID
+        return res.status(200).json({
+            preference: preference,
+            preferenceId: response.body.id,
+        });
     } catch (error) {
         console.log(error);
         return null;
     }
 };
-// Creo la preferencia de pago y devuelve su id
-// const preferenceId = await createPreference(cartItem, email);
+// Crea la preferencia de pago y devuelve su id
+// const preferenceId = await createPreference(product, user);
 
 // Devuelve el carrito actualizado y el id de la preferencia de pago
 // res.status(200).json({ cart, preferenceId });
@@ -464,4 +486,5 @@ module.exports = {
     restarUnoCantidad,
     agregarInformacionEnvio,
     getUsers,
+    createPreference,
 };

@@ -140,10 +140,10 @@ export function agregarInformacionEnvio(data) {
         console.log("error en logout", error);
     }
 }
-const getCartAndPreference = async () => {
+export const getCartAndPreference = async () => {
     try {
-        const response = await fetch("/api/cart/preference");
-        const data = await response.json();
+        const response = await axios.post("/crear-preferencia");
+        const data = await response.data;
         return data;
     } catch (error) {
         console.log(error);

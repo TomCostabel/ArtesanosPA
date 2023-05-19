@@ -12,6 +12,7 @@ const {
     restarUnoCantidad,
     agregarInformacionEnvio,
     getUsers,
+    createPreference,
 } = require("../controllers/products.controllers.js");
 
 const router = Router();
@@ -35,5 +36,7 @@ router.post("/carritoAdd", addProductToCart);
 router.post("/deleteProduct", deleteProductFromCart);
 router.post("/sumarUnoCantidad", sumarUnoCantidad);
 router.post("/restarUnoCantidad", restarUnoCantidad);
+
+router.post("/crear-preferencia", createPreference);
 
 module.exports = router;
