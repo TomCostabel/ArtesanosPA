@@ -240,7 +240,7 @@ const addProductToCart = async (req, res) => {
             return res.status(404).json({ message: "Producto no encontrado" });
         }
 
-        // Busca el carrito del usuario por su email
+        // Busco el carrito del usuario por su email
         let cart = await Cart.findOne({ user: email });
         productId;
 
@@ -282,55 +282,6 @@ const addProductToCart = async (req, res) => {
 
         // Guarda los cambios en el carrito
         await cart.save();
-
-        //---------------- MERCADO PAGO ------------------------>
-        const createPreference = async (product, user) => {
-            try {
-                // Configura el access_token
-                mercadopago.configure({
-                    access_token: process.env.ACCESS_TOKEN,
-                });
-
-                // Crea la preferencia de pago con los datos del producto y del usuario
-                const preference = {
-                    binary_mode: true,
-                    items: [
-                        {
-                            title: product?.titulo,
-                            description: product?.descripcion,
-                            picture_url: product?.image,
-                            quantity: 1,
-                            currency_id: "ARS",
-                            unit_price: product?.price,
-                        },
-                    ],
-                    payer: {
-                        name: user?.name,
-                        email: user?.email,
-                    },
-                    back_urls: {
-                        success: "https://success.com",
-                        failure: "https://failure.com",
-                        pending: "https://pending.com",
-                    },
-                    auto_return: "approved",
-                };
-
-                // Crea la preferencia en Mercado Pago y devuelve su id
-                const response = await mercadopago.preferences.create(
-                    preference
-                );
-                return response.body.id;
-            } catch (error) {
-                console.log(error);
-                return null;
-            }
-        };
-        // Crea la preferencia de pago y devuelve su id
-        const preferenceId = await createPreference(cartItem, email);
-
-        // Devuelve el carrito actualizado y el id de la preferencia de pago
-        res.status(200).json({ cart, preferenceId });
     } catch (error) {
         console.log(error);
         res.status(500).json({
@@ -339,6 +290,61 @@ const addProductToCart = async (req, res) => {
     }
 };
 
+//---------------- MERCADO PAGO ------------------------>
+const createPreference = async (product, user) => {
+    // Busco el carrito del usuario por su email
+    let cart = await Cart.findOne({ user: email });
+    try {
+        if (!product || !user) {
+            throw new Error("Producto o usuario no válido");
+        }
+        // Configura el access_token
+        mercadopago.configure({
+            access_token: process.env.ACCESS_TOKEN,
+        });
+
+        const items = cart.map((product) => {
+            return {
+                title: product?.title,
+                description: product?.description,
+                picture_url: product?.image,
+                quantity: product?.quantity,
+                currency_id: "ARS",
+                unit_price: product?.price,
+            };
+        });
+        // Crea la preferencia de pago con los datos del producto y del usuario
+        const preference = {
+            binary_mode: true,
+            items: items,
+            payer: {
+                name: user?.name,
+                email: user?.email,
+            },
+            back_urls: {
+                success: "https://success.com",
+                failure: "https://failure.com",
+                pending: "https://pending.com",
+            },
+            auto_return: "approved",
+        };
+
+        // Creo la preferencia en Mercado Pago y devuelve su id
+        const response = await mercadopago.preferences.create(preference);
+        if (response.statusCode !== 201) {
+            throw new Error("Error al crear la preferencia de pago");
+        }
+        return response.body.id;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};
+// Creo la preferencia de pago y devuelve su id
+// const preferenceId = await createPreference(cartItem, email);
+
+// Devuelve el carrito actualizado y el id de la preferencia de pago
+// res.status(200).json({ cart, preferenceId });
 //------------------Eliminar producto del cart------------------>
 const deleteProductFromCart = async (req, res) => {
     const { productId } = req.body;

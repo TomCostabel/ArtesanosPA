@@ -140,3 +140,13 @@ export function agregarInformacionEnvio(data) {
         console.log("error en logout", error);
     }
 }
+const getCartAndPreference = async () => {
+    try {
+        const response = await fetch("/api/cart/preference");
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log(error);
+        return null;
+    }
+};

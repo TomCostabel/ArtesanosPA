@@ -47,9 +47,6 @@ export default function InfoEnvios() {
         // if (usersArr[0]?.email !== data.email)
         //     return alert(" Email o contraseña incorrecta");
 
-        //----------- Uso bcrypt desde el front con "bcryptjs" para comparar las PSS------------------>
-        // const match = await bcrypt.compare(data.password, usersArr[0].password);
-
         if (
             !data.email ||
             !data.provincia ||
@@ -62,12 +59,10 @@ export default function InfoEnvios() {
         ) {
             return alert("🖋️ Primero complete los campos ...");
         }
-        //--------------Mando la inf para el login y guardo el OBJ para validaciones------------------>
 
-        // localStorage.setItem("emailLogeado", usersArr[0]?.email);
         dispatch(agregarInformacionEnvio(data));
 
-        return navigate("/");
+        return navigate("/Pagar");
     };
     return (
         <>

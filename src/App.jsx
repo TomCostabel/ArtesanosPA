@@ -13,6 +13,7 @@ import Register from "./Components/Register/Register";
 import Carrito from "./Components/Carrito/Carrito";
 import Envios from "./Components/Envios/Envios";
 import InfoEnvios from "./Components/InfoEnvios/InfoEnvios";
+import Pagar from "./Components/Pagar/Pagar";
 
 // import axios from "axios";
 
@@ -44,6 +45,7 @@ function App() {
             <Route path="/Carrito" element={<Carrito />} />
             <Route path="/Envios" element={<Envios />} />
             <Route path="/InfoEnvios" element={<InfoEnvios />} />
+            <Route path="/Pagar" element={<Pagar />} />
         </Routes>
     );
 }
