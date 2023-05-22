@@ -33,6 +33,7 @@ export default function DijesEnBrutoConAlpaca() {
                                     key={e.id}
                                     titulo={e.titulo}
                                     price={e.price}
+                                    stock={e.stock}
                                     id={e.id}
                                     image={e.image}
                                     categoria={e.categoria}

@@ -12,7 +12,6 @@ export default function Card(props) {
         productId: props.id,
         quantity: 1,
     };
-
     return (
         <div className="container-centrado-cards">
             <div className="container-card">
@@ -27,8 +26,17 @@ export default function Card(props) {
                     </Link>
                 </div>
                 <h5 className="price-card">${props.price}</h5>
+                {props.stock == 0 ? (
+                    <h6 className="sinStock">Sin Stock</h6>
+                ) : (
+                    <h6 className="sinStockNull">Sin stock</h6>
+                )}
                 <div className="container-button">
-                    {userLogeado ? (
+                    {props.stock == 0 ? (
+                        <h5 className="agregar-carrito-sinStock">
+                            Agregar al carrito
+                        </h5>
+                    ) : userLogeado ? (
                         <h5
                             onClick={() => {
                                 dispatch(agregarProductoAlCarrito(data)),

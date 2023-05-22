@@ -30,6 +30,7 @@ export default function DijesImportados() {
                                 <Card
                                     key={e.id}
                                     titulo={e.titulo}
+                                    stock={e.stock}
                                     price={e.price}
                                     id={e.id}
                                     image={e.image}
