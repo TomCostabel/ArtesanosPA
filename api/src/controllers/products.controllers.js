@@ -318,12 +318,13 @@ const createPreference = async (req, res) => {
 
         const items = cart.items.map((product) => {
             return {
-                title: product?.title,
-                // description: product?.description,
+                title: product?.titulo,
+                categoria: product?.categoria,
                 picture_url: product?.images,
                 quantity: product?.quantity,
                 currency_id: "ARS",
                 unit_price: product?.price,
+                // total_price: product?.price * product?.quantity,
             };
         });
 
@@ -362,11 +363,47 @@ const createPreference = async (req, res) => {
         return null;
     }
 };
-// Crea la preferencia de pago y devuelve su id
-// const preferenceId = await createPreference(product, user);
+const agregarCostoEnvio = async (req, res) => {
+    try {
+        const { costoEnvioType, preferenceId } = req.body;
 
-// Devuelve el carrito actualizado y el id de la preferencia de pago
-// res.status(200).json({ cart, preferenceId });
+        // Determinar el costo del envío según la opción seleccionada por el usuario
+        let costoEnvio = 0;
+        if (costoEnvioType === "EnvioCorreo") {
+            costoEnvio = 700; // Costo del envío para entrega a correo
+        }
+        if (costoEnvioType === "EnvioDomicilioPuntaAlta") {
+            costoEnvio = 0; // Costo del envío para entrega a correo
+        }
+        if (costoEnvioType === "EnvioDomicilio") {
+            costoEnvio = 1000; // Costo del envío para entrega a domicilio
+        } else if (costoEnvioType === "RetiroLocal") {
+            costoEnvio = 0; // Costo del envío para retiro en tienda
+        }
+
+        // Obtener la preferencia de pago actualizada desde Mercado Pago
+        const preference = await mercadopago.preferences.get(preferenceId);
+
+        // Agregar el costo del envío como un ítem adicional en la preferencia de pago
+        const costoEnvioItem = {
+            title: "Costo de envío",
+            TipoDeEnvio: costoEnvioType,
+            quantity: 1,
+            currency_id: "ARS",
+            unit_price: costoEnvio,
+        };
+        preference.body.items.push(costoEnvioItem);
+
+        // Guardar la preferencia de pago actualizada en la base de datos u otra acción necesaria
+
+        res.status(200).json(preference.body);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({
+            error: "Error al actualizar la preferencia de pago",
+        });
+    }
+};
 //------------------Eliminar producto del cart------------------>
 const deleteProductFromCart = async (req, res) => {
     const { productId } = req.body;
@@ -487,4 +524,5 @@ module.exports = {
     agregarInformacionEnvio,
     getUsers,
     createPreference,
+    agregarCostoEnvio,
 };
