@@ -291,7 +291,39 @@ const addProductToCart = async (req, res) => {
 };
 
 //---------------- MERCADO PAGO ------------------------>
+
+// {
+//     "email": "tomasperalta1997@hotmail.com",
+//     "costoEnvioType": "EnvioCorreo"
+// }
 const createPreference = async (req, res) => {
+    const { costoEnvioType } = req.body;
+
+    // Determinar el costo del envío según la opción seleccionada por el usuario
+    let costoEnvio = 0;
+    if (costoEnvioType === "EnvioCorreo") {
+        costoEnvio = 700; // Costo del envío para entrega a correo
+    }
+    if (costoEnvioType === "EnvioDomicilioPuntaAlta") {
+        costoEnvio = 0; // Costo del envío para entrega a correo
+    }
+    if (costoEnvioType === "EnvioDomicilio") {
+        costoEnvio = 1000; // Costo del envío para entrega a domicilio
+    } else if (costoEnvioType === "RetiroLocal") {
+        costoEnvio = 0; // Costo del envío para retiro en tienda
+    }
+
+    // Obtener la preferencia de pago actualizada desde Mercado Pago
+    // const preference = await mercadopago.preferences.get(preferenceId);
+
+    // Agregar el costo del envío como un ítem adicional en la preferencia de pago
+    const costoEnvioItem = {
+        title: "Costo de envío",
+        TipoDeEnvio: costoEnvioType,
+        quantity: 1,
+        currency_id: "ARS",
+        unit_price: costoEnvio,
+    };
     const user = await User.findOne({ email: req.body.email });
 
     // Busco el carrito del usuario por su email
@@ -349,6 +381,7 @@ const createPreference = async (req, res) => {
             },
             auto_return: "approved",
         };
+        preference.items.push(costoEnvioItem);
 
         // Creo la preferencia en Mercado Pago y devuelve su id
         const response = await mercadopago.preferences.create(preference);
@@ -363,47 +396,7 @@ const createPreference = async (req, res) => {
         return null;
     }
 };
-const agregarCostoEnvio = async (req, res) => {
-    try {
-        const { costoEnvioType, preferenceId } = req.body;
 
-        // Determinar el costo del envío según la opción seleccionada por el usuario
-        let costoEnvio = 0;
-        if (costoEnvioType === "EnvioCorreo") {
-            costoEnvio = 700; // Costo del envío para entrega a correo
-        }
-        if (costoEnvioType === "EnvioDomicilioPuntaAlta") {
-            costoEnvio = 0; // Costo del envío para entrega a correo
-        }
-        if (costoEnvioType === "EnvioDomicilio") {
-            costoEnvio = 1000; // Costo del envío para entrega a domicilio
-        } else if (costoEnvioType === "RetiroLocal") {
-            costoEnvio = 0; // Costo del envío para retiro en tienda
-        }
-
-        // Obtener la preferencia de pago actualizada desde Mercado Pago
-        const preference = await mercadopago.preferences.get(preferenceId);
-
-        // Agregar el costo del envío como un ítem adicional en la preferencia de pago
-        const costoEnvioItem = {
-            title: "Costo de envío",
-            TipoDeEnvio: costoEnvioType,
-            quantity: 1,
-            currency_id: "ARS",
-            unit_price: costoEnvio,
-        };
-        preference.body.items.push(costoEnvioItem);
-
-        // Guardar la preferencia de pago actualizada en la base de datos u otra acción necesaria
-
-        res.status(200).json(preference.body);
-    } catch (error) {
-        console.log(error);
-        res.status(500).json({
-            error: "Error al actualizar la preferencia de pago",
-        });
-    }
-};
 //------------------Eliminar producto del cart------------------>
 const deleteProductFromCart = async (req, res) => {
     const { productId } = req.body;
@@ -524,5 +517,4 @@ module.exports = {
     agregarInformacionEnvio,
     getUsers,
     createPreference,
-    agregarCostoEnvio,
 };
