@@ -66,21 +66,27 @@ export default function CardDetail() {
                                 <h1 className="price-detail">
                                     ${productos[id - 1]?.price}
                                 </h1>
-                                <h5
-                                    onClick={() => {
-                                        dispatch(
-                                            agregarProductoAlCarrito(data)
-                                        ),
-                                            swal(
-                                                "Producto agregado ",
-                                                " ",
-                                                "success"
-                                            );
-                                    }}
-                                    className="button-detail"
-                                >
-                                    Agregar al carrito
-                                </h5>
+                                {productos[id - 1]?.stock == 0 ? (
+                                    <h5 className="agregar-carrito-sinS">
+                                        Agregar al carrito
+                                    </h5>
+                                ) : (
+                                    <h5
+                                        onClick={() => {
+                                            dispatch(
+                                                agregarProductoAlCarrito(data)
+                                            ),
+                                                swal(
+                                                    "Producto agregado ",
+                                                    " ",
+                                                    "success"
+                                                );
+                                        }}
+                                        className="button-detail"
+                                    >
+                                        Agregar al carrito
+                                    </h5>
+                                )}
                             </div>
                             <div>
                                 {userLogeado ==

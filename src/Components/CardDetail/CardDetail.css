@@ -80,7 +80,18 @@
     margin-top: 40px;
     font-weight: 800;
 }
-
+.agregar-carrito-sinS {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    font-weight: 300;
+    color: rgb(255, 255, 255);
+    background-color: #00000027;
+    height: 30px;
+    width: 150px;
+    border: 1px solid #00000000;
+}
 @media (max-width: 1200px) {
     .img-detail {
         width: 300px;

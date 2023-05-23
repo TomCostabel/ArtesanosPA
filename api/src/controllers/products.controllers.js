@@ -305,7 +305,7 @@ const createPreference = async (req, res) => {
         costoEnvio = 700; // Costo del envío para entrega a correo
     }
     if (costoEnvioType === "EnvioDomicilioPuntaAlta") {
-        costoEnvio = 0; // Costo del envío para entrega a correo
+        costoEnvio = 300; // Costo del envío para entrega a correo
     }
     if (costoEnvioType === "EnvioDomicilio") {
         costoEnvio = 1000; // Costo del envío para entrega a domicilio
