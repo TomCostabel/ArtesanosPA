@@ -2,12 +2,14 @@ import {
     GET_ALL_PRODUCTS,
     GET_ALL_USERS,
     GET_CART_USER,
+    GET_PREFERENCE_ID,
 } from "../actions/index.js";
 
 const initialState = {
     productos: [],
     users: [],
     carritoUser: [],
+    preferenceId: "",
 };
 
 const rootReducer = (state = initialState, action) => {
@@ -36,7 +38,11 @@ const rootReducer = (state = initialState, action) => {
                 ...state,
                 carritoUser: action.payload,
             };
-
+        case GET_PREFERENCE_ID:
+            return {
+                ...state,
+                preferenceId: action.payload,
+            };
         default:
             return state;
     }

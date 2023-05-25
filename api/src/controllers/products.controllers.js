@@ -375,7 +375,9 @@ const createPreference = async (req, res) => {
                 numeroCelular: user?.numeroCelular,
             },
             back_urls: {
-                success: "https://success.com",
+                // success: "https://success.com",
+                success: "http://127.0.0.1:5173/RealizarPago",
+
                 failure: "https://failure.com",
                 pending: "https://pending.com",
             },
@@ -386,6 +388,22 @@ const createPreference = async (req, res) => {
         // Creo la preferencia en Mercado Pago y devuelve su id
         const response = await mercadopago.preferences.create(preference);
 
+        // Actualizar el stock de productos
+        // const paymentInfo = await mercadopago.payment.get(response.body.id);
+        // console.log(paymentInfo.body.status);
+        // if (response.body.status === "success") {
+        //     cart.items.forEach(async (product) => {
+        //         const updatedProduct = await ArtesanosProducts.findOneAndUpdate(
+        //             { id: product.productId },
+        //             { $inc: { stock: -product.quantity } }
+        //         );
+        //         if (!updatedProduct) {
+        //             throw new Error(
+        //                 "Error al actualizar el stock del producto"
+        //             );
+        //         }
+        //     });
+        // }
         // Devolver la respuesta con la preferencia y el ID
         return res.status(200).json({
             preference: preference,

@@ -2,7 +2,7 @@ import axios from "axios";
 export const GET_ALL_PRODUCTS = "GET_ALL_PRODUCTS";
 export const GET_ALL_USERS = "GET_ALL_USERS";
 export const GET_CART_USER = "GET_CART_USER";
-
+export const GET_PREFERENCE_ID = "GET_PREFERENCE_ID";
 export function getProducts() {
     return async function (dispatch) {
         try {
@@ -140,13 +140,21 @@ export function agregarInformacionEnvio(data) {
         console.log("error en logout", error);
     }
 }
-export const getCartAndPreference = async () => {
+
+export const infoEnvioAlBack = (data) => {
     try {
-        const response = await axios.post("/crear-preferencia");
-        const data = await response.data;
-        return data;
+        return async (dispatch) => {
+            const res = await axios.post(
+                "http://localhost:3001/crear-preferencia",
+                data
+            );
+            dispatch({
+                type: GET_PREFERENCE_ID,
+                payload: res.data.preferenceId,
+            });
+            return res.data;
+        };
     } catch (error) {
         console.log(error);
-        return null;
     }
 };

@@ -14,6 +14,7 @@ import Carrito from "./Components/Carrito/Carrito";
 import Envios from "./Components/Envios/Envios";
 import InfoEnvios from "./Components/InfoEnvios/InfoEnvios";
 import Pagar from "./Components/Pagar/Pagar";
+import RealizarPago from "./Components/RealizarPago/RealizarPago";
 
 // import axios from "axios";
 
@@ -46,6 +47,10 @@ function App() {
             <Route path="/Envios" element={<Envios />} />
             <Route path="/InfoEnvios" element={<InfoEnvios />} />
             <Route path="/Pagar" element={<Pagar />} />
+            <Route path="/EnvioCorreo" element={<RealizarPago />} />
+            <Route path="/EnvioDomicilioPuntaAlta" element={<RealizarPago />} />
+            <Route path="/EnvioDomicilio" element={<RealizarPago />} />
+            <Route path="/RetiroLocal" element={<RealizarPago />} />
         </Routes>
     );
 }

@@ -16,7 +16,6 @@ export default function () {
     const [loading, setLoading] = useState(true);
     const userLogeado = localStorage.getItem("emailLogeado");
     const usuario = users.filter((e) => e.email === userLogeado);
-    console.log(usuario);
     setTimeout(() => {
         setLoading(false);
     }, 1200);
@@ -36,24 +35,38 @@ export default function () {
                         <div className="container-informacion">
                             <div>
                                 <h4>Nombre y Apellido</h4>
-                                <h6>{usuario[0].nombreApellido}</h6>
+                                <h6 className="info-usuario">
+                                    {usuario[0].nombreApellido}
+                                </h6>
 
-                                <h4>Email</h4>
-                                <h6>{usuario[0].email}</h6>
+                                <h4>Dirección</h4>
+                                <h6 className="info-usuario">
+                                    {usuario[0].direccion}
+                                </h6>
 
                                 <h4>DNI</h4>
-                                <h6>{usuario[0].dni}</h6>
+                                <h6 className="info-usuario">
+                                    {usuario[0].dni}
+                                </h6>
                                 <h4>Numero Celular</h4>
-                                <h6>{usuario[0].numeroCelular}</h6>
+                                <h6 className="info-usuario">
+                                    {usuario[0].numeroCelular}
+                                </h6>
                             </div>
                             <div>
                                 <h4>Provincia</h4>
-                                <h6>{usuario[0].provincia}</h6>
+                                <h6 className="info-usuario">
+                                    {usuario[0].provincia}
+                                </h6>
 
                                 <h4>Ciudad</h4>
-                                <h6>{usuario[0].ciudad}</h6>
+                                <h6 className="info-usuario">
+                                    {usuario[0].ciudad}
+                                </h6>
                                 <h4>CP</h4>
-                                <h6>{usuario[0].codigoPostal}</h6>
+                                <h6 className="info-usuario">
+                                    {usuario[0].codigoPostal}
+                                </h6>
                                 <div className="container-editar">
                                     <Link to="/infoEnvios">
                                         <h6 className="button-editar-info">
@@ -68,25 +81,25 @@ export default function () {
                             </div>
                         </div>
                         <div>
-                            <Link to="/infoEnvios">
+                            <Link to="/RetiroLocal">
                                 <h2 className="envios-h2">
                                     <img className="img-local" src={imgLocal} />
                                     Retirar en local (Punta Alta)
                                 </h2>
                             </Link>
-                            <Link to="/infoEnvios">
+                            <Link to="/EnvioDomicilioPuntaAlta">
                                 <h2 className="envios-h2">
                                     <img className="img-local" src={imgLocal} />
                                     Envio a domicilio (Punta Alta) <br />
                                 </h2>
                             </Link>
-                            <Link to="/infoEnvios">
+                            <Link to="/EnvioDomicilio">
                                 <h2 className="envios-h2">
                                     <img className="img-envio" src={imgEnvio} />
                                     Envio a domicilio (Otra ciudad)
                                 </h2>
                             </Link>
-                            <Link to="/infoEnvios">
+                            <Link to="/EnvioCorreo">
                                 <h2 className="envios-h2">
                                     <img className="img-envio" src={imgEnvio} />
                                     Envio al correo (Otra ciudad)
