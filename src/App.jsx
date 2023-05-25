@@ -15,6 +15,7 @@ import Envios from "./Components/Envios/Envios";
 import InfoEnvios from "./Components/InfoEnvios/InfoEnvios";
 import Pagar from "./Components/Pagar/Pagar";
 import RealizarPago from "./Components/RealizarPago/RealizarPago";
+import Success from "./Components/Status/Success";
 
 // import axios from "axios";
 
@@ -51,6 +52,7 @@ function App() {
             <Route path="/EnvioDomicilioPuntaAlta" element={<RealizarPago />} />
             <Route path="/EnvioDomicilio" element={<RealizarPago />} />
             <Route path="/RetiroLocal" element={<RealizarPago />} />
+            <Route path="/Success" element={<Success />} />
         </Routes>
     );
 }

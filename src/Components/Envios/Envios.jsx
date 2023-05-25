@@ -91,18 +91,27 @@ export default function () {
                                 <h2 className="envios-h2">
                                     <img className="img-local" src={imgLocal} />
                                     Envio a domicilio (Punta Alta) <br />
+                                    <h6 className="montoAgregado-Envio">
+                                        + $300
+                                    </h6>
+                                </h2>
+                            </Link>
+                            <Link to="/EnvioCorreo">
+                                <h2 className="envios-h2">
+                                    <img className="img-envio" src={imgEnvio} />
+                                    Envio al correo (Otra ciudad){" "}
+                                    <h6 className="montoAgregado-Envio">
+                                        + $700
+                                    </h6>
                                 </h2>
                             </Link>
                             <Link to="/EnvioDomicilio">
                                 <h2 className="envios-h2">
                                     <img className="img-envio" src={imgEnvio} />
                                     Envio a domicilio (Otra ciudad)
-                                </h2>
-                            </Link>
-                            <Link to="/EnvioCorreo">
-                                <h2 className="envios-h2">
-                                    <img className="img-envio" src={imgEnvio} />
-                                    Envio al correo (Otra ciudad)
+                                    <h6 className="montoAgregado-Envio">
+                                        + $1000
+                                    </h6>
                                 </h2>
                             </Link>
                         </div>

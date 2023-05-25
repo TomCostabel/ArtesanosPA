@@ -375,9 +375,7 @@ const createPreference = async (req, res) => {
                 numeroCelular: user?.numeroCelular,
             },
             back_urls: {
-                // success: "https://success.com",
-                success: "http://127.0.0.1:5173/RealizarPago",
-
+                success: "http://127.0.0.1:5173/Success",
                 failure: "https://failure.com",
                 pending: "https://pending.com",
             },
