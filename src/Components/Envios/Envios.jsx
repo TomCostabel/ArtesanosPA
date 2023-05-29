@@ -169,7 +169,7 @@ export default function () {
                                         <div className="titulo-envio">
                                             <h4>
                                                 Correo Argentino - Envio al
-                                                correo
+                                                sucursal
                                             </h4>
                                             <h6 className="fecha-envio">
                                                 Llega de 6 a 9 dias habiles
@@ -196,7 +196,7 @@ export default function () {
                                         <div className="titulo-envio">
                                             <h4>
                                                 Correo Argentino - Envio al
-                                                correo
+                                                sucursal
                                             </h4>
                                             <h6 className="fecha-envio">
                                                 Llega de 6 a 9 dias habiles
