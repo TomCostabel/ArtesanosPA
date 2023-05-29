@@ -51,7 +51,6 @@ export default function InfoEnvios() {
             !data.email ||
             !data.provincia ||
             !data.ciudad ||
-            !data.direccion ||
             !data.codigoPostal ||
             !data.dni ||
             !data.nombreApellido ||

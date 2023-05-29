@@ -5,6 +5,7 @@ import { useEffect } from "react";
 import {
     deleteProductoCarrito,
     getCartUser,
+    getProducts,
     restarUnoCantidad,
     sumarUnoCantidad,
 } from "../../redux/actions";
@@ -17,14 +18,17 @@ import Loading from "../Loading/Loading";
 export default function Carrito() {
     const dispatch = useDispatch();
     const carritoUser = useSelector((state) => state.carritoUser);
+    const productos = useSelector((state) => state.productos);
     const userLogeado = localStorage.getItem("emailLogeado");
     let totalPagar = 0;
+    let stockMenorQ = [];
     const [loading, setLoading] = useState(true);
     setTimeout(() => {
         setLoading(false);
     }, 1200);
     useEffect(() => {
         dispatch(getCartUser(userLogeado));
+        dispatch(getProducts());
     }, []);
     return (
         <>
@@ -140,6 +144,35 @@ export default function Carrito() {
                                                     +
                                                 </h6>
                                             </div>
+                                            <h6>
+                                                {productos.map((element) => {
+                                                    if (
+                                                        e.productId ==
+                                                        element.id
+                                                    ) {
+                                                        if (
+                                                            e.quantity >
+                                                            element.stock
+                                                        ) {
+                                                            stockMenorQ.push(
+                                                                "1"
+                                                            );
+                                                            console.log(
+                                                                stockMenorQ
+                                                            );
+                                                        }
+                                                    }
+                                                    // return element.titulo ==
+                                                    //     e.titulo ? (
+                                                    //     <h2>
+                                                    //         {e.quantity >
+                                                    //         element.stock
+                                                    //             ? "Sin Stock"
+                                                    //             : null}
+                                                    //     </h2>
+                                                    // ) : null;
+                                                })}
+                                            </h6>
                                             {/* ------------------Total productos a pagar------------- */}
 
                                             <h4 className="container-price">
@@ -152,9 +185,20 @@ export default function Carrito() {
                             <div className="container-pagar">
                                 <div className="totalPagar">${totalPagar}</div>
                                 <div className="button-logo-pagar">
-                                    <Link to="/Envios">
-                                        <button>Pagar</button>
-                                    </Link>
+                                    {!stockMenorQ.length ? (
+                                        <Link to="/Envios">
+                                            <button>Pagar</button>
+                                        </Link>
+                                    ) : (
+                                        <button
+                                            onClick={() =>
+                                                alert("Producto sin stock")
+                                            }
+                                        >
+                                            Pagar
+                                        </button>
+                                    )}
+
                                     <img
                                         className="mp-logo"
                                         src={img}
