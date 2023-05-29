@@ -115,7 +115,14 @@ export default function () {
                                             className="img-local"
                                             src={imgLocal}
                                         />
-                                        Envio a domicilio (Punta Alta) <br />
+                                        <div className="titulo-envio">
+                                            <h4>
+                                                Envio a domicilio (Punta Alta)
+                                            </h4>
+                                            <h6 className="fecha-envio">
+                                                Llega entre hoy y mañana
+                                            </h6>
+                                        </div>
                                         <h6 className="montoAgregado-Envio">
                                             + $300
                                         </h6>
@@ -139,7 +146,7 @@ export default function () {
                                                 Envio a domicilio (Punta Alta)
                                             </h4>
                                             <h6 className="fecha-envio">
-                                                📅 Llega entre hoy y mañana
+                                                Llega entre hoy y mañana
                                             </h6>
                                         </div>
                                         <h6 className="montoAgregado-Envio">
@@ -161,10 +168,11 @@ export default function () {
                                         />
                                         <div className="titulo-envio">
                                             <h4>
-                                                Envio al correo (Otra ciudad){" "}
+                                                Correo Argentino - Envio al
+                                                correo
                                             </h4>
                                             <h6 className="fecha-envio">
-                                                📅 Llega de 6 a 9 dias habiles
+                                                Llega de 6 a 9 dias habiles
                                             </h6>
                                         </div>
                                         <h6 className="montoAgregado-Envio">
@@ -187,10 +195,11 @@ export default function () {
                                         />
                                         <div className="titulo-envio">
                                             <h4>
-                                                Envio al correo (Otra ciudad){" "}
+                                                Correo Argentino - Envio al
+                                                correo
                                             </h4>
                                             <h6 className="fecha-envio">
-                                                📅 Llega de 6 a 9 dias habiles
+                                                Llega de 6 a 9 dias habiles
                                             </h6>
                                         </div>
 
@@ -213,10 +222,11 @@ export default function () {
                                         />
                                         <div className="titulo-envio">
                                             <h4>
-                                                Envio a domicilio (Otra ciudad)
+                                                Correo Argentino - Envio a
+                                                domicilio
                                             </h4>
                                             <h6 className="fecha-envio">
-                                                📅 Llega de 6 a 9 dias habiles
+                                                Llega de 6 a 9 dias habiles
                                             </h6>
                                         </div>
 
@@ -241,10 +251,10 @@ export default function () {
                                         <div className="titulo-envio">
                                             <h4>
                                                 Correo Argentino - Envio a
-                                                domiciolio
+                                                domicilio
                                             </h4>
                                             <h6 className="fecha-envio">
-                                                📅 Llega de 6 a 9 dias habiles
+                                                Llega de 6 a 9 dias habiles
                                             </h6>
                                         </div>
                                         <h6 className="montoAgregado-Envio">

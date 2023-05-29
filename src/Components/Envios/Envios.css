@@ -15,7 +15,7 @@
     width: 400px;
 }
 
-.titulo-envios {
+/* .titulo-envios {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,7 +25,7 @@
     background-color: black;
     color: white;
     height: 50px;
-}
+} */
 .button-editar-info {
     display: flex;
     align-items: center;
@@ -42,6 +42,7 @@
 .info-usuario {
     font-weight: 400;
     margin-top: -10px;
+    color: rgba(0, 0, 0, 0.671);
 }
 
 .button-editar-info:hover {
@@ -98,6 +99,7 @@
     justify-content: center;
     font-weight: 400;
     font-size: 13px;
+    margin-left: -20px;
 }
 .img-local {
     width: 17px;
@@ -112,21 +114,21 @@
     margin-left: 15px;
 }
 @media (max-width: 700px) {
-    .titulo-envios {
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        width: 310px;
-        border-radius: 10px;
-        font-size: 18px;
-        background-color: black;
-        color: white;
-        height: 40px;
+    .titulo-envio {
+        width: 180px;
+        margin-top: -7px;
     }
 
     .envios-h2 {
-        width: 310px;
+        width: 290px;
         height: 70px;
-        font-size: 15px;
+        font-size: 12px;
+    }
+    .container-centrado-envios {
+        flex-direction: column;
+        margin-top: 100px;
+    }
+    .container-informacion {
+        width: 280px;
     }
 }

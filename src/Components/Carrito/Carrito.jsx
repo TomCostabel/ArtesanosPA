@@ -111,68 +111,74 @@ export default function Carrito() {
                                                     Eliminar
                                                 </h6>
                                             </div>
-                                            <div className="container-quantity">
-                                                {/* ------------------Restar producto------------------- */}
+                                            <div className="quantity-sinStock">
+                                                <div className="container-quantity">
+                                                    {/* ------------------Restar producto------------------- */}
 
-                                                <h6
-                                                    onClick={() =>
-                                                        dispatch(
-                                                            restarUnoCantidad(
-                                                                data
+                                                    <h6
+                                                        onClick={() =>
+                                                            dispatch(
+                                                                restarUnoCantidad(
+                                                                    data
+                                                                )
                                                             )
-                                                        )
-                                                    }
-                                                    className="button-mas-menos"
-                                                >
-                                                    -
-                                                </h6>
-                                                <h3 className="numero-quantity">
-                                                    {e.quantity}
-                                                </h3>
-                                                {/* ------------------Sumar producto------------------ */}
+                                                        }
+                                                        className="button-mas-menos"
+                                                    >
+                                                        -
+                                                    </h6>
+                                                    <h3 className="numero-quantity">
+                                                        {e.quantity}
+                                                    </h3>
+                                                    {/* ------------------Sumar producto------------------ */}
 
-                                                <h6
-                                                    onClick={() =>
-                                                        dispatch(
-                                                            sumarUnoCantidad(
-                                                                data
+                                                    <h6
+                                                        onClick={() =>
+                                                            dispatch(
+                                                                sumarUnoCantidad(
+                                                                    data
+                                                                )
                                                             )
-                                                        )
-                                                    }
-                                                    className="button-mas-menos"
-                                                >
-                                                    +
+                                                        }
+                                                        className="button-mas-menos"
+                                                    >
+                                                        +
+                                                    </h6>
+                                                </div>
+                                                <h6>
+                                                    {productos.map(
+                                                        (element) => {
+                                                            if (
+                                                                e.productId ==
+                                                                element.id
+                                                            ) {
+                                                                if (
+                                                                    e.quantity >
+                                                                    element.stock
+                                                                ) {
+                                                                    stockMenorQ.push(
+                                                                        "1"
+                                                                    );
+                                                                    return element.titulo ==
+                                                                        e.titulo ? (
+                                                                        <h2>
+                                                                            {e.quantity >
+                                                                            element.stock ? (
+                                                                                <h6 className="sinStockCarrito">
+                                                                                    Stock:{" "}
+                                                                                    {
+                                                                                        element.stock
+                                                                                    }
+                                                                                </h6>
+                                                                            ) : null}
+                                                                        </h2>
+                                                                    ) : null;
+                                                                }
+                                                            }
+                                                        }
+                                                    )}
                                                 </h6>
                                             </div>
-                                            <h6>
-                                                {productos.map((element) => {
-                                                    if (
-                                                        e.productId ==
-                                                        element.id
-                                                    ) {
-                                                        if (
-                                                            e.quantity >
-                                                            element.stock
-                                                        ) {
-                                                            stockMenorQ.push(
-                                                                "1"
-                                                            );
-                                                            console.log(
-                                                                stockMenorQ
-                                                            );
-                                                        }
-                                                    }
-                                                    // return element.titulo ==
-                                                    //     e.titulo ? (
-                                                    //     <h2>
-                                                    //         {e.quantity >
-                                                    //         element.stock
-                                                    //             ? "Sin Stock"
-                                                    //             : null}
-                                                    //     </h2>
-                                                    // ) : null;
-                                                })}
-                                            </h6>
                                             {/* ------------------Total productos a pagar------------- */}
 
                                             <h4 className="container-price">
