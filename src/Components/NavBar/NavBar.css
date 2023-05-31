@@ -3,6 +3,7 @@
     align-items: center;
     justify-content: space-around;
     background-color: #fff1eb;
+
     height: 105px;
     -webkit-box-shadow: -4px 2px 18px 0px #f0d9cf;
     -moz-box-shadow: -4px 2px 18px 0px #f0d9cf;
@@ -40,6 +41,7 @@
 }
 .title-navBar-list {
     font-weight: 300;
+    /* font-size: 11px; */
 }
 .img-ig {
     width: 20px;

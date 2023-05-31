@@ -18,7 +18,7 @@ export default function NavBar() {
     const cerrarSesion = () => {
         localStorage.setItem("emailLogeado", []);
 
-        return navigate(0);
+        return navigate("/");
     };
     let cantidadProductosCarrito = 0;
     if (carritoUser.length) {
