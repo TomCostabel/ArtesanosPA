@@ -15,13 +15,13 @@ export default function InfoEnvios() {
     const [loading, setLoading] = useState(true);
     const [data, setData] = useState({
         email: userLogeado,
-        provincia: " ",
+        provincia: "",
         ciudad: "",
-        direccion: " ",
+        direccion: "",
         codigoPostal: "",
         dni: "",
-        nombreApellido: " ",
-        numeroCelular: " ",
+        nombreApellido: "",
+        numeroCelular: "",
     });
 
     setTimeout(() => {
@@ -38,30 +38,20 @@ export default function InfoEnvios() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        // ----Filtro la coincidencia en el usuario logeado para guardarlo en el estado local.------->
-        // const usersArr = users?.filter((e) => e.email == data.email);
-
-        // if (!usersArr) {
-        //     return alert("🖋️ Email no encontrado en la base de datos");
+        // if (
+        //     !data.email ||
+        //     !data.provincia ||
+        //     !data.ciudad ||
+        //     !data.codigoPostal ||
+        //     !data.dni ||
+        //     !data.nombreApellido ||
+        //     !data.numeroCelular
+        // ) {
+        //     alert("🖋️ Primero complete los campos ...");
         // }
-        // if (usersArr[0]?.email !== data.email)
-        //     return alert(" Email o contraseña incorrecta");
-
-        if (
-            !data.email ||
-            !data.provincia ||
-            !data.ciudad ||
-            !data.codigoPostal ||
-            !data.dni ||
-            !data.nombreApellido ||
-            !data.numeroCelular
-        ) {
-            return alert("🖋️ Primero complete los campos ...");
-        }
-
         dispatch(agregarInformacionEnvio(data));
 
-        return navigate("/Pagar");
+        return navigate("/Envios");
     };
     return (
         <>
@@ -101,7 +91,7 @@ export default function InfoEnvios() {
                                 Codigo Postal:
                                 <input
                                     className="input-login"
-                                    type="number"
+                                    type="text"
                                     placeholder="Ej: 8109"
                                     name="codigoPostal"
                                     value={data.codigoPostal}
@@ -123,7 +113,7 @@ export default function InfoEnvios() {
                                 DNI:
                                 <input
                                     className="input-login"
-                                    type="number"
+                                    type="text"
                                     name="dni"
                                     value={data.dni}
                                     onChange={(e) => handleChange(e)}
@@ -144,7 +134,7 @@ export default function InfoEnvios() {
                                 Celular:
                                 <input
                                     className="input-login"
-                                    type="number"
+                                    type="text"
                                     placeholder="Ej: +54 1234 123456"
                                     name="numeroCelular"
                                     value={data.numeroCelular}

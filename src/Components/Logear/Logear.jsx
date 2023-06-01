@@ -42,8 +42,9 @@ export default function Logear() {
     };
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (!data.email) return alert("🖋️ Primero complete los campos...");
-        if (!data.password) return alert("🖋️ Primero complete los campos...");
+        if (!data.email) return swal("🖋️ Primero complete los campos...");
+
+        if (!data.password) return swal("🖋️ Primero complete los campos...");
 
         // ----Filtro la coincidencia en el usuario logeado para guardarlo en el estado local.------->
         const usersArr = users?.filter((e) => e.email == data.email);

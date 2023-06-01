@@ -77,18 +77,21 @@ const agregarInformacionEnvio = async (req, res) => {
         nombreApellido,
         numeroCelular,
     } = req.body;
+
+    const updatedData = {};
+
+    if (provincia) updatedData.provincia = provincia;
+    if (ciudad) updatedData.ciudad = ciudad;
+    if (direccion) updatedData.direccion = direccion;
+    if (codigoPostal) updatedData.codigoPostal = codigoPostal;
+    if (dni) updatedData.dni = dni;
+    if (nombreApellido) updatedData.nombreApellido = nombreApellido;
+    if (numeroCelular) updatedData.numeroCelular = numeroCelular;
     try {
         const findUser = await User.findOneAndUpdate(
             { email },
-            {
-                provincia,
-                ciudad,
-                direccion,
-                codigoPostal,
-                dni,
-                nombreApellido,
-                numeroCelular,
-            },
+
+            updatedData,
             { new: true }
         );
         res.json(findUser);

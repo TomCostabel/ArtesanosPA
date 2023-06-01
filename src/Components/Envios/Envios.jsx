@@ -105,10 +105,8 @@ export default function () {
                                 </h2>
                             </Link>
                             {usuario[0].direccion &&
-                            usuario[0].ciudad &&
-                            usuario[0].provincia &&
-                            usuario[0].codigoPostal &&
-                            usuario[0].dni ? (
+                            usuario[0].numeroCelular &&
+                            usuario[0].nombreApellido ? (
                                 <Link to="/EnvioDomicilioPuntaAlta">
                                     <h2 className="envios-h2">
                                         <img
@@ -131,8 +129,9 @@ export default function () {
                             ) : (
                                 <div
                                     onClick={() =>
-                                        alert(
-                                            "Informacion de envio necesaria(Provincia, Ciudad, CP, Direccion, DNI, Nombre y Apellido, Nro. Celular)"
+                                        swal(
+                                            "🖋️ Informacion necesaria ",
+                                            "(   Direccion, Nombre y Apellido, Nro. Celular)"
                                         )
                                     }
                                 >
@@ -155,10 +154,11 @@ export default function () {
                                     </h2>
                                 </div>
                             )}
-                            {usuario[0].direccion &&
-                            usuario[0].ciudad &&
+                            {usuario[0].ciudad &&
                             usuario[0].provincia &&
                             usuario[0].codigoPostal &&
+                            usuario[0].numeroCelular &&
+                            usuario[0].nombreApellido &&
                             usuario[0].dni ? (
                                 <Link to="/EnvioCorreo">
                                     <h2 className="envios-h2">
@@ -183,8 +183,9 @@ export default function () {
                             ) : (
                                 <div
                                     onClick={() =>
-                                        alert(
-                                            "Informacion de envio necesaria(Provincia, Ciudad, CP, Direccion, DNI, Nombre y Apellido, Nro. Celular)"
+                                        swal(
+                                            "🖋️ Informacion necesaria ",
+                                            "(Provincia, Ciudad, CP, DNI, Nombre y Apellido, Nro. Celular)"
                                         )
                                     }
                                 >
@@ -213,6 +214,8 @@ export default function () {
                             usuario[0].ciudad &&
                             usuario[0].provincia &&
                             usuario[0].codigoPostal &&
+                            usuario[0].nombreApellido &&
+                            usuario[0].numeroCelular &&
                             usuario[0].dni ? (
                                 <Link to="/EnvioDomicilio">
                                     <h2 className="envios-h2">
@@ -238,8 +241,9 @@ export default function () {
                             ) : (
                                 <div
                                     onClick={() =>
-                                        alert(
-                                            "Informacion de envio necesaria(Provincia, Ciudad, CP, Direccion, DNI, Nombre y Apellido, Nro. Celular)"
+                                        swal(
+                                            "🖋️ Informacion necesaria ",
+                                            "(Provincia, Ciudad, Direccion,  CP, DNI, Nombre y Apellido, Nro. Celular)"
                                         )
                                     }
                                 >
