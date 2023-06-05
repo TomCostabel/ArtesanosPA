@@ -13,6 +13,7 @@ const {
     agregarInformacionEnvio,
     getUsers,
     createPreference,
+    verificarEstadoPago,
 } = require("../controllers/products.controllers.js");
 
 const router = Router();

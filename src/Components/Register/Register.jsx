@@ -5,10 +5,12 @@ import { getUsers, postRegister } from "../../redux/actions";
 import { useDispatch, useSelector } from "react-redux";
 import img from "../../assets/img/amatistaPNG.png";
 import Loading from "../Loading/Loading";
+import { useNavigate } from "react-router-dom";
 export default function Register() {
     //------------------------Constantes------------------------>
 
     const users = useSelector((state) => state.users);
+    const navigate = useNavigate();
     const [loading, setLoading] = useState(true);
     const dispatch = useDispatch();
     const [confirmPassword, setConfirmPassword] = useState("");
@@ -51,7 +53,7 @@ export default function Register() {
             return;
         } else {
             dispatch(postRegister(data));
-            console.log("registradooooooo");
+            navigate("/Login");
         }
     };
 

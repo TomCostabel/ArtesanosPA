@@ -293,13 +293,13 @@ const addProductToCart = async (req, res) => {
     }
 };
 
-//---------------- MERCADO PAGO ------------------------>
-
-// {
-//     "email": "tomasperalta1997@hotmail.com",
-//     "costoEnvioType": "EnvioCorreo"
-// }
 const createPreference = async (req, res) => {
+    //---------------- MERCADO PAGO ------------------------>
+
+    // {
+    //     "email": "tomasperalta1997@hotmail.com",
+    //     "costoEnvioType": "EnvioCorreo"
+    // }
     const { costoEnvioType } = req.body;
 
     // Determinar el costo del envío según la opción seleccionada por el usuario
@@ -390,8 +390,10 @@ const createPreference = async (req, res) => {
         const response = await mercadopago.preferences.create(preference);
 
         // Actualizar el stock de productos
-        // const paymentInfo = await mercadopago.payment.get(response.body.id);
-        // console.log(paymentInfo.body.status);
+        const paymentInfo = await mercadopago.searchPayment(
+            "tomasperalta1997@hotmail.com"
+        );
+        console.log(paymentInfo);
         // if (response.body.status === "success") {
         //     cart.items.forEach(async (product) => {
         //         const updatedProduct = await ArtesanosProducts.findOneAndUpdate(
@@ -406,6 +408,7 @@ const createPreference = async (req, res) => {
         //     });
         // }
         // Devolver la respuesta con la preferencia y el ID
+
         return res.status(200).json({
             preference: preference,
             preferenceId: response.body.id,
